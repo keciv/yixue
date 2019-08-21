@@ -1,0 +1,13 @@
+<div class="navlist">
+<p <if condition="$lanmu['ParentLanmu']['id'] eq 27">style="width:180%;"</if>>
+  <volist name="lanmu.ChildrenLanmu" id="erji">
+  	<if condition="$erji['id'] eq 5">
+		<a href="__APP__/Search_5.html" <if condition="$parentID eq $erji['id']"> class="color"</if>>人员查询</a>	
+  	<elseif condition="$erji['id'] eq 1"/>
+    	<a href="__APP__/Danye_2.html" <if condition="$parentID eq $erji['id']"> class="color"</if>>{$erji.title}</a>
+  	<else/>
+    	<a href="__APP__/{$erji.controller}_{$erji.id}.html" <if condition="$parentID eq $erji['id']"> class="color"</if>>{$erji.title}</a>
+	</if>
+  </volist>
+ </p>
+</div>

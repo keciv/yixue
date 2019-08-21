@@ -1,0 +1,2017 @@
+body {
+  background: #FAFAFA;
+}
+header {
+  z-index: 100;
+  width: 100%;
+  background: #3399fe;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+header > div {
+  width: 33.333%;
+}
+header .left {
+  text-align: left;
+  padding-left: 4%;
+}
+header .left a {
+  display: block;
+  line-height: 5rem;
+  color: white;
+  font-size: 1.4rem;
+}
+header .left a span {
+  font-size: 1.4rem;
+}
+header .center {
+  text-align: center;
+  line-height: 5rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: white;
+}
+header .right {
+  text-align: right;
+  padding-right: 5%;
+}
+header .right a {
+  display: block;
+  line-height: 5rem;
+  color: white;
+  font-size: 1.4rem;
+}
+.course {
+  width: 92%;
+  margin: auto;
+}
+.course .left {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 5rem;
+}
+.course .right {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.course .right a {
+  line-height: 5rem;
+  display: inline-block;
+  color: #333;
+}
+.course_video {
+  width: 94%;
+  margin: auto;
+}
+.course_video > div {
+  width: 48%;
+  margin: 0 1% 0.6rem;
+  position: relative;
+  height: 10rem;
+}
+.course_video > .left img {
+  width: 100%;
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+.course_video > .left .course_video_posi {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.course_video > .left .course_video_posi h5 {
+  padding-right: 5px;
+  text-align: right;
+  font-size: 1rem;
+  color: white;
+  margin: 10px 0 0 0;
+}
+.course_video > .left .course_video_posi h5 span {
+  font-size: 1.2rem;
+}
+.course_video > .left .course_video_posi h4 {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #f4ea19;
+  text-align: center;
+}
+.course_video > .left .course_video_posi h3 {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 10px 0 0;
+  font-weight: bold;
+  color: white;
+}
+.course_video > .left .course_video_posi p {
+  width: 80%;
+  margin: 24px auto 0;
+  height: 2.5rem;
+  border-radius: 1.2rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+.course_video > .left .course_video_posi p .left {
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+  color: white;
+  padding-left: 0.5rem;
+}
+.course_video > .left .course_video_posi p .right {
+  display: inline-block;
+  background: #ff8201;
+  height: 2.5rem;
+  border-radius: 1.2rem;
+  width: 4.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+}
+.course_video .right {
+  background: red;
+}
+.free {
+  width: 94%;
+  margin: auto;
+}
+.free a {
+  display: block;
+  width: 48%;
+  margin: 0 1% 10px;
+}
+.free a p {
+  font-size: 1.4rem;
+  color: #000;
+  width: 100%;
+  padding: 0.8rem 0 0rem;
+  margin: 0;
+}
+.free a span {
+  font-size: 1rem;
+  color: #999;
+  padding-bottom: 1.5rem;
+}
+.free .free_main {
+  width: 100%;
+  height: 10rem;
+  padding-top: 2rem;
+}
+.free .free_main h4 {
+  text-align: center;
+  color: white;
+  font-size: 1.4rem;
+  margin: 0;
+}
+.free .free_main h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin: 0.5rem 0 0;
+  text-align: center;
+}
+.free .free_main h5 {
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.free .one {
+  background: #b6a659;
+}
+.free .two {
+  background: #525d93;
+}
+.free .three {
+  background: #df3d52;
+}
+.free .four {
+  background: #3aa2df;
+}
+.pay {
+  width: 94%;
+  margin: auto;
+}
+.pay > a {
+  display: block;
+  width: 48%;
+  margin: 0 1% 1rem;
+}
+.pay > a > div {
+  width: 100%;
+}
+.pay > a > div img {
+  width: 100%;
+  height: 8.7rem;
+}
+.pay > a > div .fl {
+  font-size: 1.4rem;
+  color: #ff8201;
+}
+.pay > a > div .fr {
+  line-height: 2rem;
+  font-size: 1.2rem;
+  color: #999;
+}
+.pay > a p {
+  font-size: 1.4rem;
+  width: 100%;
+  color: #333;
+  margin: 0.8rem 0 1rem;
+}
+footer {
+  width: 100%;
+  height: 5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 0.5px solid #999;
+  background: #f5f5f5;
+}
+footer > div {
+  width: 25%;
+  height: 100%;
+}
+footer > div a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 0.3rem 0 0.5rem;
+}
+footer > div a span {
+  display: block;
+}
+footer > div a .tubiao {
+  font-size: 2rem;
+  color: #999;
+}
+footer > div a .tubiao img {
+  width: 2rem;
+  max-width: 100%;
+}
+footer > div a .zi {
+  font-size: 1.2rem;
+  color: #999;
+}
+.head {
+  height: 5rem;
+  background: #3399fe;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.head .left {
+  padding-left: 4%;
+  width: 33.333%;
+  text-align: left;
+}
+.head .left a {
+  margin-left: ;
+  font-size: 1.6rem;
+  line-height: 5rem;
+  color: white;
+}
+.head .center {
+  width: 33.333%;
+  text-align: center;
+  line-height: 5rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: white;
+}
+.classification {
+  width: 100%;
+}
+.classification .left {
+  width: 33.333%;
+}
+.classification .left ul {
+  width: 100%;
+}
+.classification .left ul li {
+  text-align: center;
+  width: 100%;
+  line-height: 4rem;
+  font-size: 1.4rem;
+}
+.classification .right {
+  width: 66.666%;
+  background: #f9f9f9;
+}
+.classification .right .right_main {
+  height: 100%;
+  display: none;
+}
+.classification .right .right_main h3 {
+  font-size: 1.4rem;
+  line-height: 4rem;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+.classification .right .right_main .right_main_main {
+  width: 100%;
+  padding-top: 2rem;
+  height: calc(92%);
+  height: -webkit-calc(92%);
+  height: -moz-calc(92%);
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.classification .right .right_main .right_main_main p {
+  width: 80%;
+  border: 1px solid #999;
+  border-radius: 1rem;
+  line-height: 4rem;
+  margin: 0 auto 2rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.leftbg {
+  border-left: 0.2rem solid #3399fe;
+  background: #f9f9f9;
+  color: #3399fe;
+}
+.p_bgcolor {
+  background: #3399fe;
+  color: white;
+  border: 1px solid #3399fe !important;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.loadmore {
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+}
+.loadmore span {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  display: inline-block;
+  margin: 10px;
+  border: 2px solid #f60;
+  border-bottom-color: transparent;
+  vertical-align: middle;
+  -webkit-animation: rotate 1.1s infinite linear;
+  animation: rotate 1.1s infinite linear;
+}
+.loadover {
+  margin: 0 12px;
+  padding: 24px 0;
+  height: 20px;
+  line-height: 20px;
+  color: #909090;
+  text-align: center;
+}
+.loadover span {
+  position: relative;
+  display: inline-block;
+  padding: 0 6px;
+  height: 20px;
+  font-size: 16px;
+  z-index: 2;
+}
+.loadover:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #DCDCDC;
+  z-index: 1;
+  display: block;
+}
+.video_head {
+  width: 100%;
+  height: 18rem;
+  position: relative;
+}
+.video_head .lpk_stop {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top: 50%;
+  margin-top: -2rem;
+  left: 50%;
+  margin-left: -2rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid#CCCCCC;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 10000;
+}
+.video_head .lpk_stop span {
+  font-size: 1.6rem;
+  line-height: 3.8rem;
+  color: white;
+}
+.video_head .video_head_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.video_head video {
+  width: 100%;
+  height: 18rem;
+}
+.video_head .video_top {
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  top: 0;
+  left: 0;
+  line-height: 3rem;
+  color: white;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  display: none;
+  z-index: 1000;
+}
+.video_head .video_top a {
+  font-size: 1.2rem;
+  color: white;
+  margin-left: 1rem;
+}
+.video_head .video_bottop {
+  z-index: 1000;
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.video_head .video_bottop .stop {
+  font-size: 1.6rem;
+  color: white;
+  line-height: 2.6rem;
+  margin-left: 1rem;
+}
+.video_head .video_bottop .jdt {
+  position: relative;
+  width: 14rem;
+  height: 0.4rem;
+  background: white;
+  margin-top: 1.3rem;
+  margin-left: 1rem;
+}
+.video_head .video_bottop .jdt .top {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #3399FE;
+}
+.video_head .video_bottop .time {
+  font-size: 1.2rem;
+  line-height: 3rem;
+  color: #333;
+  margin-left: 1rem;
+}
+.video_head .video_bottop .time span {
+  color: #333;
+  font-size: 1.2rem;
+  color: white;
+}
+.video_head .video_bottop .ping {
+  font-size: 1.6rem;
+  color: white;
+  line-height: 2.6rem;
+  margin-right: 1rem;
+}
+.video_nr {
+  width: 100%;
+}
+.video_nr ul {
+  width: 100%;
+  background: white;
+}
+.video_nr ul li {
+  float: left;
+  width: 27.333%;
+  margin: 0 3%;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 5rem;
+}
+.video_nr_bg {
+  color: #3399fe !important;
+  border-bottom: 0.2rem solid #3399fe;
+}
+.video_xq {
+  width: 100%;
+  position: absolute;
+  top: 25rem;
+  padding: 1rem 0 0;
+}
+.video_xq .video_xqone {
+  display: none;
+  width: 94%;
+  height: 100%;
+  margin: auto;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.video_xq .video_xqone .top {
+  border-bottom: 0.1rem solid #9999;
+}
+.video_xq .video_xqone .top h3 {
+  font-size: 1.4rem;
+  line-height: 3rem;
+  margin: 0;
+}
+.video_xq .video_xqone .top h4 {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: #999;
+}
+.video_xq .video_xqone .top h4 span {
+  font-size: 1.4rem;
+  color: orange;
+  margin-right: 2rem;
+}
+.video_xq .video_xqone .bottom h3 {
+  font-size: 1.6rem;
+  line-height: 5rem;
+  margin: 0;
+}
+.video_xq .video_xqtwo {
+  width: 94%;
+  height: 100%;
+  margin: auto;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.video_xq .video_xqtwo ul li {
+  border-bottom: 0.5px solid #999;
+}
+.video_xq .video_xqtwo ul li a {
+  display: block;
+  line-height: 4rem;
+}
+.video_xq .video_xqtwo ul li a span {
+  font-size: 1.4rem;
+  display: inline-block;
+  color: #333;
+  line-height: 4rem;
+}
+.video_xq .video_xqtwo ul li a .fr {
+  color: #999;
+}
+.lpk_foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background: white;
+}
+.lpk_foot div {
+  width: 50%;
+  font-size: 1.6rem;
+  line-height: 5rem;
+  color: #333;
+  text-align: center;
+}
+.lpk_foot div a {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 5rem;
+  margin-right: 1rem;
+  color: #999;
+}
+.lpk_foot_color {
+  background: #3399FE;
+  color: #fff !important;
+}
+.play_color {
+  color: #3399FE !important;
+}
+.fx {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.fx .fx_btn1 {
+  position: absolute;
+  width: 80%;
+  background: white;
+  top: 50%;
+  margin-top: -4rem;
+  left: 10%;
+  border-radius: 1rem;
+}
+.fx .fx_btn1 h3 {
+  line-height: 4rem;
+  font-size: 1.6rem;
+  color: #000;
+  margin: 0;
+  text-align: center;
+  border-bottom: 0.5px solid #999;
+}
+.fx .fx_btn1 p {
+  width: 100%;
+  margin: 0;
+}
+.fx .fx_btn1 p a {
+  display: inline-block;
+  width: 49%;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #3399FE;
+}
+.fx .fx_btn {
+  position: absolute;
+  width: 80%;
+  height: 8rem;
+  background: white;
+  top: 50%;
+  margin-top: -4rem;
+  left: 10%;
+  border-radius: 1rem;
+}
+.fx .fx_btn h3 {
+  line-height: 4rem;
+  font-size: 1.6rem;
+  color: #000;
+  margin: 0;
+  text-align: center;
+  border-bottom: 0.5px solid #999;
+}
+.fx .fx_btn p {
+  width: 100%;
+  margin: 0;
+}
+.fx .fx_btn p a {
+  display: inline-block;
+  width: 49%;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #3399FE;
+}
+.fx .lpkhide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+}
+.fx .row {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 0;
+  margin: 0;
+}
+.fx .row #share-2 {
+  width: 100%;
+  padding: 2rem 0;
+}
+.fx .row #share-2 > a {
+  width: 11%;
+  margin: 0 7% !important;
+}
+.nav {
+  width: 100%;
+  height: 5rem;
+  background: white;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.nav ul {
+  width: 140%;
+}
+.nav ul li {
+  float: left;
+}
+.nav ul li a {
+  display: block;
+  font-size: 1.4rem;
+  color: #000;
+  line-height: 4.9rem;
+  padding: 0 2rem;
+}
+.lpk_head {
+  width: 100%;
+  height: 29rem;
+  background: url(../img/lpkhead.png) no-repeat 50% 50%;
+  background-size: 100% 100%;
+  position: relative;
+}
+.lpk_head .shuliang {
+  position: absolute;
+  left: 50%;
+  margin-left: -5rem;
+  width: 10rem;
+  height: 8rem;
+  top: 24%;
+  text-align: center;
+}
+.lpk_head .shuliang span {
+  display: inline-block;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-top: 0.8rem;
+}
+.lpk_head .shuliang p {
+  text-align: center;
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+.lpk_head ul {
+  width: 100%;
+  position: absolute;
+  height: 5rem;
+  left: 0;
+  bottom: 4rem;
+}
+.lpk_head ul li {
+  float: left;
+  width: 33.333%;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.lpk_head ul li span {
+  font-size: 2rem;
+}
+.lpk_five {
+  width: 100%;
+  height: 12rem;
+  background: url(../img/lpkhead2.png) no-repeat 50% 50%;
+  background-size: 100% 100%;
+}
+.lpk_five ul {
+  width: 100%;
+}
+.lpk_five ul li {
+  width: 16%;
+  margin: 0 2%;
+  float: left;
+  height: 12rem;
+}
+.lpk_five ul li a {
+  display: block;
+  width: 100%;
+}
+.lpk_five ul li a figure {
+  width: 100%;
+  border-radius: 1.8rem;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+.lpk_five ul li a figure img {
+  width: 100%;
+}
+.lpk_five ul li a figcaption {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 1.5rem;
+}
+.lianyi {
+  width: 100%;
+  height: 5rem;
+  background: white;
+  margin-top: 1rem;
+  border-bottom: 0.5px solid #999;
+  line-height: 5rem;
+  font-size: 1.4rem;
+}
+.lianyi span {
+  display: inline-block;
+  width: 2rem;
+  height: 100%;
+  margin-left: 1rem;
+  margin-right: 1.5rem;
+}
+.lianyi span img {
+  width: 100%;
+}
+.lianyi p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.lpk_ti {
+  width: 100%;
+  background: white;
+}
+.lpk_ti ul {
+  width: 100%;
+  padding: 0;
+  margin-bottom: -0.5px;
+}
+.lpk_ti ul li {
+  float: left;
+  width: 100%;
+  height: 6rem;
+  border-bottom: 0.5px solid #999;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.lpk_ti ul li a {
+  display: block;
+  width: 100%;
+}
+.lpk_ti ul li a .left {
+  width: 20%;
+  height: 5rem;
+  margin-left: 1rem;
+  margin-top: 0.3rem;
+}
+.lpk_ti ul li a .center .top {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #333;
+  line-height: 2.5rem;
+}
+.lpk_ti ul li a .center .bot {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #999;
+  line-height: 2.5rem;
+}
+.lpk_ti ul li a .right {
+  line-height: 6rem;
+  margin-right: 1.5rem;
+}
+.lpk_ti ul li a .right span {
+  font-size: 1.6rem;
+  color: #999;
+}
+.box {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 12px;
+  color: #3399fe;
+  font-weight: bold;
+  background: url(../img/investjd.png);
+}
+.topic {
+  width: 98%;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+.topic > div {
+  width: 46%;
+  margin: 1rem 2% 0;
+  background: white;
+  -moz-box-shadow: 1px 1px 2px #999999, -1px 1px 2px #999999;
+  -webkit-box-shadow: 1px 1px 2px #999999, -1px 1px 2px #999999;
+  box-shadow: 1px 1px 2px #999999, -1px 1px 2px #999999;
+}
+.topic > div > a {
+  display: block;
+  width: 67%;
+  height: 100%;
+  margin: auto;
+}
+.topic > div h3 {
+  margin: 1rem 0 0;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #333;
+}
+.topic > div h4 {
+  margin: 1rem 0 0;
+  color: #3399fe;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.topic > div span {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  color: #999;
+  margin: 1rem 0 0.2rem;
+}
+.timu h3 {
+  text-align: center;
+  width: 80%;
+  margin: 2rem auto 0;
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+}
+.timu p {
+  text-align: center;
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+  line-height: 4rem;
+}
+.ksjs {
+  width: 80%;
+  margin: auto;
+  font-size: 1.4rem;
+  color: #333;
+  line-height: 3rem;
+}
+.jr {
+  width: 50%;
+  margin: 4rem auto 0;
+}
+.jr a {
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  background: #3399fe;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+.feng {
+  width: 100%;
+  background: #3399fe;
+}
+.feng h3 {
+  margin: 0;
+  text-align: center;
+  color: white;
+  font-size: 5.8rem;
+  line-height: 15rem;
+}
+.feng h3 span {
+  font-size: 1.2rem;
+}
+.feng > div {
+  padding-bottom: 0.5rem;
+}
+.feng > div div {
+  width: 50%;
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 2.5rem;
+}
+.feng > div div span {
+  font-size: 1.2rem;
+}
+.lpk_lpk_five {
+  background: none;
+}
+.lpk_lpk_five ul li {
+  margin: 0 8%;
+}
+.lpk_lpk_five ul li figcaption {
+  font-weight: bold;
+}
+.row {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 0;
+  margin: 0;
+}
+.row #share-3 {
+  width: 100%;
+  padding: 2rem 0;
+}
+.row #share-3 > a {
+  width: 11%;
+  margin: 0 7% !important;
+}
+.lpkhide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+}
+.lpkhide {
+  background: rgba(0, 0, 0, 0.2);
+}
+.falsenull {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -75px;
+  height: 150px;
+}
+.falsenull img {
+  width: 50%;
+}
+.biaoti {
+  position: fixed;
+  left: 0;
+  top: 5rem;
+  background: white;
+  width: 100%;
+  height: 4rem;
+  z-index: 1;
+}
+.biaoti .left {
+  font-size: 1.4rem;
+  line-height: 4rem;
+  padding-left: 1rem;
+  color: orangered;
+}
+.biaoti .right {
+  font-size: 1.4rem;
+  line-height: 4rem;
+  padding-right: 1rem;
+}
+.biaoti .right span {
+  font-size: 1.4rem;
+  color: orangered;
+}
+.timu_info {
+  width: 100%;
+  padding: 2rem 1rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  position: fixed;
+  height: 6rem;
+  left: 0;
+  top: 9rem;
+  background: #f5f5f5;
+}
+.abcd {
+  width: 94%;
+  margin: auto;
+}
+.abcd ul {
+  width: 100%;
+}
+.abcd ul li {
+  margin-bottom: 2rem;
+  background: white;
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  border-left: 5px solid #fff;
+}
+.abcd ul li .p1 {
+  width: 5%;
+  font-size: 1.6rem;
+  margin: 0 0 0 5%;
+}
+.abcd ul li .p2 {
+  font-size: 1.4rem;
+  width: 88%;
+  line-height: 2rem;
+  margin: 0;
+}
+.abcd ul li .p3 {
+  display: none;
+  width: 10%;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0;
+}
+.abcdlitrue {
+  border-left: 5px solid #3399fe !important;
+}
+.p1colortrue {
+  color: #3399fe;
+}
+.p2widthtrue {
+  width: 80% !important;
+  color: #3399fe;
+}
+.p3colortrue {
+  color: #3399fe !important;
+}
+.abcdlifalse {
+  border-left: 5px solid red !important;
+}
+.p1colorfalse {
+  color: red;
+}
+.p2widthfalse {
+  width: 80% !important;
+  color: red;
+}
+.p3colorfalse {
+  color: red !important;
+}
+.jianxi {
+  width: 94%;
+  margin: auto;
+  background: white;
+  padding: 0 1em 1rem;
+}
+.jianxi h3 {
+  margin: 0;
+  line-height: 4rem;
+  font-size: 1.4rem;
+}
+.jianxi h4 {
+  margin: 0;
+  line-height: 4rem;
+  font-size: 1.4rem;
+}
+.jianxi p {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 0;
+}
+.my {
+  font-size: 1.2rem;
+  color: #999;
+  text-align: center;
+  margin: 0;
+  line-height: 4rem;
+}
+.lpk_f {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 5rem;
+  width: 100%;
+  background: white;
+}
+.lpk_f div {
+  padding: 0.5rem 0;
+  width: 50%;
+  text-align: center;
+  color: #999;
+}
+.lpk_f div span {
+  font-size: 1.2rem;
+  color: #999;
+}
+.lpk_fcolor {
+  color: #3399fe !important;
+}
+.menu {
+  display: none;
+  position: fixed;
+  top: 0rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.menu .to {
+  position: absolute;
+  left: 0;
+  top: 0rem;
+  width: 100%;
+  height: 20%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.menu .bo {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80%;
+}
+.menu .bo .menu_one {
+  height: 5rem;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: white;
+  border-bottom: 0.5px solid #999;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.menu .bo .menu_one .left {
+  font-size: 1.4rem;
+  line-height: 5rem;
+}
+.menu .bo .menu_one .left span {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 0.5rem;
+}
+.menu .bo .menu_one .right {
+  line-height: 5rem;
+}
+.menu .bo .menu_one .right span {
+  display: inline-block;
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+.menu .bo .menu_two {
+  height: 5rem;
+  width: 100%;
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 0.5px solid #999;
+}
+.menu .bo .menu_two .left {
+  font-size: 1.4rem;
+  line-height: 5rem;
+}
+.menu .bo .menu_two .right {
+  line-height: 5rem;
+}
+.menu .bo .menu_two .right span {
+  display: inline-block;
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+.menu .bo .menu_three {
+  height: 5rem;
+  width: 100%;
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.menu .bo .menu_three .left {
+  font-size: 1.4rem;
+  line-height: 5rem;
+}
+.menu .bo .menu_main {
+  background: white;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+  text-align: left;
+}
+.menu .bo .menu_main a {
+  display: block;
+  width: 11%;
+  margin: 0.5rem 4%;
+  background: #f2f2f2;
+  border: 1px solid #999;
+  border-radius: 50%;
+  float: left;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #999;
+}
+.menu .bo .lpk_fo {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5rem;
+  width: 100%;
+  background: #3399fe;
+}
+.menu .bo .lpk_fo .fl {
+  width: 49.999%;
+}
+.menu .bo .lpk_fo .fl a {
+  display: block;
+  font-size: 1.6rem;
+  color: white;
+  text-align: center;
+  line-height: 5rem;
+}
+.lpk_fa {
+  width: 100%;
+}
+.lpk_fa .inpu {
+  background: white;
+}
+.lpk_fa .inpu div {
+  width: 96%;
+  margin: auto;
+  border-bottom: 1px solid #999;
+  line-height: 4rem;
+  font-size: 1.4rem;
+}
+.lpk_fa .inpu div input {
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+.lpk_fa textarea {
+  font-size: 1.4rem;
+  color: #999;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+  border: 0;
+  outline: none;
+  height: 12rem;
+}
+.lpk_fa p {
+  text-align: right;
+  font-size: 1.4rem;
+  color: #666;
+  line-height: 3rem;
+  padding-right: 1rem;
+}
+.lpk_fa button {
+  width: 96%;
+  display: block;
+  margin: 2rem auto 0;
+  border: 0;
+  outline: none;
+  line-height: 4rem;
+  background: #999;
+  color: white;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+}
+._ti {
+  width: 100%;
+}
+._ti ._ti_list ._ti_list_ {
+  float: left;
+  position: relative;
+}
+.info_head {
+  width: 100%;
+  height: 16rem;
+  background: #3399FE;
+}
+.info_head .left .touxiang {
+  width: 6rem;
+  height: 6rem;
+  background: red;
+  margin-top: 5rem;
+  margin-left: 3rem;
+  border-radius: 50%;
+}
+.info_head .left .touxiang img {
+  width: 100%;
+  height: 100%;
+}
+.info_head .center {
+  font-size: 1.6rem;
+  color: white;
+  line-height: 16rem;
+  margin-left: 2rem;
+}
+.info_head .right {
+  font-size: 2.2rem;
+  color: white;
+  line-height: 16rem;
+  margin-right: 2rem;
+}
+.lpkfive_info {
+  background: white !important;
+  height: 11rem !important;
+}
+.lpkfive_info ul li {
+  width: 12%;
+  margin: 0 10% !important;
+}
+.lpkfive_info ul li figcaption {
+  font-size: 1.6rem !important;
+}
+.info_list {
+  width: 100%;
+}
+.info_list ul {
+  width: 100%;
+}
+.info_list ul li {
+  width: 100%;
+  float: left;
+  background: #fff;
+}
+.info_list ul li a {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 4rem;
+}
+.info_list ul li a .left {
+  width: 10%;
+  height: 5rem;
+  text-align: center;
+  margin-left: 2%;
+}
+.info_list ul li a .left span {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+}
+.info_list ul li a .left span img {
+  width: 100%;
+  height: 100%;
+}
+.info_list ul li a .right {
+  width: 85%;
+  line-height: 5rem;
+  font-size: 1.6rem;
+  color: #333;
+  border-bottom: 1px solid #f2f2f2;
+}
+.info_list ul li a .right span {
+  font-size: 1.8rem;
+  color: #999;
+  line-height: 5rem;
+}
+.ck_togg {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  height: 5.2rem;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+.ck_togg > div {
+  width: 50%;
+  text-align: center;
+}
+.ck_togg > div a {
+  display: inline-block;
+  font-size: 1.64rem;
+  line-height: 5rem;
+  text-align: center;
+  color: #333;
+  width: 60%;
+}
+.ck_toggcolor {
+  border-bottom: 1px solid #3399FE;
+  color: #3399FE !important;
+}
+.ck_togg_main {
+  width: 100%;
+}
+.ck_togg_main ul {
+  width: 100%;
+  display: none;
+}
+.ck_togg_main ul > img {
+  width: 50%;
+  margin-top: 10rem;
+}
+.ck_togg_main ul li {
+  width: 1005;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+.ck_togg_main ul li .left {
+  width: 40%;
+}
+.ck_togg_main ul li .left img {
+  width: 100%;
+  height: 100%;
+}
+.ck_togg_main ul li .right {
+  position: relative;
+  width: 57%;
+  height: 8.6rem;
+}
+.ck_togg_main ul li .right h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 2rem;
+  color: #333;
+}
+.ck_togg_main ul li .right p {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #999;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+}
+.kb {
+  width: 100%;
+  text-align: center;
+}
+.kb img {
+  width: 50%;
+  margin-top: 12rem;
+}
+.gonggao {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 2rem;
+  color: red;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+.yaohide {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000000;
+}
+.yaohide .yaohiderow {
+  padding: 1rem;
+  text-align: center;
+}
+.yaohide .yaohiderow a {
+  margin: 0 7%;
+}
+.lixian {
+  background: #fafafa;
+  border-bottom: 1rem solid #f5f5f5;
+}
+.lixian h3 {
+  margin: 0;
+  line-height: 4rem;
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
+.lixian .clearfix {
+  margin: 0;
+  padding-left: 2rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  display: block;
+}
+.lixian .clearfix .left {
+  width: 40%;
+  position: relative;
+}
+.lixian .clearfix .left img {
+  width: 100%;
+  height: 100%;
+}
+.lixian .clearfix .left span {
+  position: absolute;
+  display: inline-block;
+  color: white;
+  font-size: 1.6rem;
+  top: 1.2rem;
+  right: 0.5rem;
+}
+.lixian .clearfix .right {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 7rem;
+}
+.wanc {
+  margin-top: 1rem;
+  background: #fafafa;
+}
+.wanc h3 {
+  margin: 0;
+  line-height: 4rem;
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
+.vie_jd {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 1.5rem;
+  background: #ccc;
+  width: 100%;
+}
+.vie_jd1 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 1.5rem;
+  background: #999;
+  width: 50%;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  text-align: right;
+}
+.jilu ul li {
+  padding: 0;
+  min-height: 5rem;
+  padding: 0.5rem 0;
+}
+.jilu ul li h4 {
+  font-size: 1.4rem;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+}
+.jilu ul li .jilu_main {
+  margin-bottom: 0.5rem;
+}
+.jilu ul li .jilu_main .lpk_l {
+  padding-left: 1rem;
+  width: 10%;
+  line-height: 5.5rem;
+  display: none;
+}
+.jilu ul li .jilu_main .lpk_r {
+  width: 90%;
+  margin-top: 1rem;
+}
+.jilu ul li .jilu_main .lpk_r .clearfix .l_l {
+  line-height: 2.5rem;
+  font-size: 1.4rem;
+}
+.jilu ul li .jilu_main .lpk_r .clearfix .l_l span {
+  font-size: 1.4rem;
+}
+.jilu ul li .jilu_main .lpk_r .clearfix .l_l span img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+.jilu ul li .jilu_main .lpk_r .clearfix .l_r {
+  margin-right: 1rem;
+}
+.jilu ul li .jilu_main .lpk_r .clearfix .l_r a {
+  font-size: 1.3rem;
+  color: white;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #ff7f00;
+}
+.tishi {
+  display: none;
+  position: fixed;
+  z-index: 100000000000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.tishi .tishi_posi {
+  background: white;
+  width: 70%;
+  border-radius: 1rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -35%;
+  top: 50%;
+}
+.tishi .tishi_posi p {
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+  padding: 0.8rem;
+  margin: 0;
+}
+.tishi .tishi_posi .clearfix {
+  width: 100%;
+}
+.tishi .tishi_posi .clearfix .left {
+  width: 49.99%;
+  line-height: 3.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #3399FE;
+  border-top: 1px solid #ccc;
+}
+.quan_del {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  bottom: 0;
+  left: 0;
+  background: #3399FE;
+}
+.quan_del > div {
+  width: 49.99%;
+  font-size: 1.6rem;
+  color: white;
+  text-align: center;
+  line-height: 5rem;
+}
+.shiti {
+  width: 100%;
+}
+.shiti li {
+  width: 100%;
+}
+.shiti li a {
+  display: block;
+  width: 100%;
+  line-height: 3.5rem;
+  font-size: 1.4rem;
+  color: #333;
+  vertical-align: middle;
+}
+.shiti li a span {
+  font-size: 1.6rem;
+  line-height: 3.5rem;
+  color: #999;
+}
+.shiti li a input {
+  display: none;
+  margin-right: 0.5rem;
+}
+.s_zhi {
+  width: 100%;
+}
+.s_zhi ul {
+  width: 100%;
+}
+.s_zhi ul li {
+  width: 100%;
+  background: white;
+}
+.s_zhi ul li a {
+  display: block;
+  width: 94%;
+  margin: auto;
+  line-height: 4rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+.s_zhi ul li a span {
+  font-size: 1.4rem;
+  line-height: 4rem;
+  color: #999;
+}
+.s_zhi .tui_btn {
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  width: 92%;
+  margin: 2rem auto 0;
+  background: #3399FE;
+  border-radius: 0.5rem;
+  border: 0;
+}
+.xg_pass {
+  width: 100%;
+}
+.xg_pass .xg_pass_main {
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: auto;
+  background: white;
+  border-bottom: 0.5px solid #ccc;
+}
+.xg_pass .xg_pass_main .left {
+  font-size: 1.4rem;
+  line-height: 4rem;
+  width: 23%;
+}
+.xg_pass .xg_pass_main .right {
+  width: 77%;
+}
+.xg_pass .xg_pass_main .right input {
+  width: 100%;
+  font-size: 1.4rem;
+  color: #999;
+  line-height: 4rem;
+}
+.xg_pass .mima {
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  width: 92%;
+  margin: 2rem auto 0;
+  background: #3399FE;
+  border-radius: 0.5rem;
+  border: 0;
+}
+.b_z_main {
+  width: 100%;
+  padding: 1rem 0;
+}
+.b_z_main h3 {
+  width: 94%;
+  margin: 0.5rem auto 0.5rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.b_z_main p {
+  width: 94%;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+}
+.yi_jain {
+  width: 100%;
+}
+.yi_jain textarea {
+  display: block;
+  width: 94%;
+  margin: 1rem auto;
+  background: white;
+  border: 0;
+  height: 15rem;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  outline: none;
+}
+.yi_jain p {
+  text-align: right;
+  font-size: 1.2rem;
+  color: #999;
+  width: 96%;
+  margin: 0 auto;
+}
+.yi_jain .mima {
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 3.5rem;
+  width: 92%;
+  margin: 2rem auto 0;
+  background: #3399FE;
+  border-radius: 0.5rem;
+  border: 0;
+}
+.about {
+  width: 100%;
+}
+.about ul {
+  width: 100%;
+  background: white;
+}
+.about ul li {
+  width: 94%;
+  margin: auto;
+  border-bottom: 0.5px solid #ccc;
+}
+.about ul li a {
+  width: 100%;
+  display: block;
+}
+.about ul li a .left {
+  width: 1.5rem;
+  margin-right: 1rem;
+}
+.about ul li a .left span {
+  margin-top: 1rem;
+  display: block;
+  width: 100%;
+}
+.about ul li a .left span img {
+  width: 100%;
+}
+.about ul li a .center {
+  color: #333;
+  line-height: 4rem;
+  font-size: 1.4rem;
+}
+.about ul li a .right {
+  font-size: 1.4rem;
+  color: #3399FE;
+  line-height: 4rem;
+}
+.gr_main {
+  background: white;
+}
+.gr_main .one {
+  padding: 1.5rem 0;
+  width: 94%;
+  margin: auto;
+  border-bottom: 1px solid #ccc;
+}
+.gr_main .one .left {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 4rem;
+}
+.gr_main .one .right {
+  width: 4rem;
+  height: 4rem;
+  background: red;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.gr_main .one .right img {
+  width: 100%;
+  height: 100%;
+}
+.gr_main .two {
+  width: 94%;
+  margin: auto;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+.gr_main .two .left {
+  font-size: 1.4rem;
+  line-height: 4rem;
+  width: 20%;
+}
+.gr_main .two .right {
+  width: 80%;
+}
+.gr_main .two .right input {
+  width: 100%;
+  font-size: 1.4rem;
+  line-height: 4rem;
+  text-align: right;
+  color: #999;
+}
+.denglu {
+  width: 100%;
+  padding-top: 5rem;
+  background: white;
+  padding-bottom: 1rem;
+}
+.denglu div {
+  width: 88%;
+  margin: 1rem auto 0;
+}
+.denglu div input {
+  width: 100%;
+  color: #666;
+  font-size: 1.4rem;
+  line-height: 4rem;
+  border-bottom: 1px solid #ccc;
+}
+.denglu button {
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 3.5rem;
+  width: 88%;
+  margin: 3rem auto 0;
+  background: #3399FE;
+  border-radius: 0.5rem;
+  border: 0;
+}
+.new {
+  width: 100%;
+  padding: 1rem 0;
+}
+.new li {
+  width: 94%;
+  margin: auto;
+}
+.new li a {
+  display: block;
+  width: 100%;
+  line-height: 4rem;
+  font-size: 1.4rem;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+.shang_x {
+  width: 100%;
+  margin: 1rem 0;
+}
+.shang_x div {
+  padding-bottom: 1rem;
+  width: 50%;
+  text-align: center;
+}
+.shang_x div a {
+  height: 3rem;
+  line-height: 3rem;
+  color: white;
+  font-size: 1.4rem;
+  background: #3399FE;
+  padding: 0.5rem 1rem;
+}

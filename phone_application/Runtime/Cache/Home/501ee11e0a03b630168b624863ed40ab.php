@@ -1,0 +1,434 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/yixue/public/home/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="/yixue/public/home/lb/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/yixue/public/home/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/fonts/iconfont.eot" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/fonts/iconfont.svg" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/fonts/iconfont.ttf" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/fonts/iconfont.woff" />
+		<script type="text/javascript" src="/yixue/public/js/base64.js"></script>
+		<script src="/yixue/public/js/layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/yixue/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.row {
+				padding: 20px 0 0 20px
+			}
+			
+			.row-pad {
+				padding: 20px 0 0 60px
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="video_head">
+			<!--<div class="lpk_stop">-->
+				<!--<span class="glyphicon glyphicon-play stop"></span>-->
+			<!--</div>-->
+			<!--<div class="video_head_bg">-->
+			<!--</div>-->
+			<!--<div class="video_top">-->
+				<!--<a class="glyphicon glyphicon-chevron-left" href="/yixue/index.php/SfClass.html"></a> 第一章-->
+			<!--</div>-->
+			<!--<video src="/yixue/public/home/video/1.mp4">-->
+			<!--</video>-->
+			<!--<div class="video_bottop clearfix">-->
+				<!--<div class="fl glyphicon glyphicon-play stop"></div>-->
+				<!--<div class="fl jdt">-->
+					<!--<div class="top"></div>-->
+				<!--</div>-->
+				<!--<div class="time fl">-->
+					<!--<span>00:00:00</span>/<span>00:00:00</span>-->
+				<!--</div>-->
+				<!--<div class="ping fr glyphicon glyphicon-stop"></div>-->
+			<!--</div>-->
+		</div>
+		<div class="video_nr">
+			<ul class="clearfix">
+				<li class="">
+					介绍
+				</li>
+				<li class="video_nr_bg">
+					目录
+				</li>
+				<li>
+					PDF讲义
+				</li>
+			</ul>
+		</div>
+	<input id="status" type="hidden" value="<?php echo ($status["status"]); ?>" />
+		<div class="video_xq">
+			<div class="video_xqone">
+				<div class="top">
+					<h3>[ 基础精讲 ] 2018护士资格考试</h3>
+					<h4><span>免费</span>1234人学过</h4>
+				</div>
+				<div class="bottom">
+					<h3>课程信息</h3>
+					<p><img src="/yixue/public/home/img/mf1.jpg" /></p>
+				</div>
+			</div>
+			<div class="video_xqtwo">
+				<ul class="clearfix">
+					<?php if(is_array($zhangjie)): $i = 0; $__LIST__ = $zhangjie;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><script>
+							var jiami = new Jiami();
+							var a<?php echo ($data["id"]); ?> = jiami.base64encode("<?php echo ($data["video_path"]); ?>");
+						</script>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<!--<span style="margin-right: 1rem;">1</span>-->
+								<input type="hidden" value="<?php echo ($data["is_download"]); ?>"/>
+								<input type="hidden" value="<?php echo ($data["id"]); ?>" id="myvideo"/>
+								<span data-url="<?php echo ($data["video_path"]); ?>" data-id="<?php echo ($data["id"]); ?>" class="play_color" 
+									  onclick="location.href='/yixue/Video?id='+getUrlParam('id')+'&chapter=<?php echo ($data["id"]); ?>&url='+a<?php echo ($data["id"]); ?>+''"><?php echo ($data["title"]); ?></span>
+								<?php
+ if(in_array($data['title'],$download)&&$data['is_download'] == 1){ echo '<span class="fr glyphicon glyphicon-download-alt" style="pointer-events:none;">已下载</span>'; }else if(in_array($data['title'],$download)&&$data['is_download'] == 0){ echo '<span class="fr glyphicon glyphicon-download-alt" >正在下载</span>'; }else{ echo '<span class="fr glyphicon glyphicon-download-alt"></span>'; } ?>
+								<!--<span class="fr glyphicon glyphicon-download-alt"></span>-->
+								
+								<!--<span class="fr glyphicon glyphicon-download-alt"></span>-->
+								
+							</a>
+						</li><?php endforeach; endif; else: echo "" ;endif; ?>
+				</ul>
+			</div>
+			<div>
+				<!--空-->
+			</div>
+
+		</div>
+		<div id="" style="height: 5rem;width: 100%;">
+
+		</div>
+		<div class="lpk_foot clearfix">
+			<div class="fl left">
+				<a class="glyphicon glyphicon-star-empty" id="collect"></a>
+			</div>
+			<!--判断是否收藏-->
+			<script type="text/javascript">
+				var zhangjieURL = window.location.search;
+				var zhangjieId = zhangjieURL.split("&")[1].slice(8);
+				var collect ="<?php echo ($collect); ?>";
+				if(collect.indexOf(zhangjieId) > -1){
+					$("#collect").text('已收藏');
+					
+
+				}else{
+				
+					$("#collect").text('收藏');
+					$("#collect").css('color','#333');
+				}
+			</script>
+			
+			
+			<div class="fr eight lpk_foot_color">
+				<a class="glyphicon glyphicon-plus lpk_foot_color"></a>加入学习
+			</div>
+		</div>
+
+		<div class="fx">
+			<div class="fx_btn">
+				<h3>分享之后才能观看本视频哦！</h3>
+				<p>
+					<a href="javascript:;" style="border-right: 0.5px solid #999;" id="qx">取消</a>
+					<a href="javascript:;" id="fx">分享</a>
+				</p>
+			</div>
+			<div class="lpkhide">
+
+			</div>
+			<div class="row">
+				<div id="share-2"></div>
+			</div>
+		</div>
+
+	</body>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/jquery.share.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/jquery.share.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<script type="text/javascript">
+		//		$('.video_head').click(function(){
+		//			var arr=$('.video_head video').removeAttr('controls');
+		//			console.log(arr)
+		//		})
+
+		function setControl() {
+			var video = document.getElementById("video");
+			video.controls = false;
+			if(video.currentTime >= 2 * 60) {
+				video.controls = true;
+			}
+			setTimeOut("setControl()", 10);
+		}
+
+		var lpk = window.screen.height;
+		$('.video_xq').height(lpk - 300);
+
+		$('.lpkhide').height(lpk - 72);
+		$('.video_nr ul li').click(function() {
+			$(this).addClass('video_nr_bg').siblings().removeClass('video_nr_bg');
+			$('.video_xq>div').eq($(this).index()).show().siblings().hide();
+		})
+		$('#share-2').share({
+			sites: ['wechat', 'qq', 'weibo', 'qzone', ]
+		});
+		$('#fx').click(function() {
+			$('.fx_btn').hide();
+			$('.row').slideDown()
+			$('.lpkhide').show();
+		})
+		$('.lpkhide').click(function() {
+			$('.fx').fadeOut()
+		})
+		$('.video_xqtwo>ul>li a .fr').click(function() {
+			a = $(this).siblings("span").text();
+			
+			//url = "http://192.168.1.117:8080/edu"+$(this).siblings("span").data("url");
+			url = "/yixue"+$(this).siblings("span").data("url");
+		var id = "<?php echo ($class_id); ?>";
+		var hiden = $(this);
+			
+			$.ajax({
+				type : "post",
+				dataType : "json",
+				url : "<?php echo U('Video/getname');?>",
+				data : {id : id, name : a},
+				success : function(data)
+				{
+					console.log(data);
+					if(data.code>0){
+						alert(data.msg);
+						//hiden.fadeOut();
+						hiden.text('已下载');
+						$(hiden).css("pointer-events", "none"); 
+					}else{
+						alert(data.msg);
+					};
+//					b = data;
+//					JSInterface.upload.video(a,b,url);
+				}
+			});
+			
+			//$('.fx').fadeIn();
+			//$('.fx_btn').show();
+			//$('.lpkhide').hide();
+			//$('.row').hide();
+		})
+		$('#qx').click(function() {
+			$('.fx').fadeOut();
+		})
+	</script>
+	<script type="text/javascript">
+		var arr = document.querySelector('video');
+		var ad = document.querySelector('.time').children;
+		var aa = document.querySelector('.jdt').children;
+		var quan = document.querySelector('.ping');
+
+		$('.lpk_stop').click(function() {
+			if(arr.paused) {
+				arr.play();
+				setTimeout(function() {
+					$('.lpk_stop').hide();
+				}, 500);
+
+			}
+
+		})
+		$('.video_bottop .stop').click(function() {
+			if(arr.paused) {
+				arr.play();
+				setTimeout(function() {
+					$('.video_top').fadeOut();
+					$('.video_bottop').fadeOut();
+				}, 5000);
+
+			} else {
+				arr.pause();
+				$('.lpk_stop').show();
+			}
+			var gf = this.getAttribute('class')
+			if(gf == 'fl glyphicon glyphicon-play stop') {
+				this.setAttribute('class', 'fl glyphicon glyphicon-pause stop')
+			} else {
+				this.setAttribute('class', 'fl glyphicon glyphicon-play stop')
+			}
+		})
+		arr.oncanplay = function() {
+			var af = arr.duration
+			//			获取视频总时间
+			var h = Math.floor(af / 3600)
+			var f = Math.floor(af / 60)
+			var s = Math.floor(af % 60)
+			h = h < 10 ? h = '0' + h : h;
+			f = f < 10 ? f = '0' + f : f;
+			s = s < 10 ? s = '0' + s : s;
+			ad[1].innerHTML = h + ':' + f + ':' + s
+		}
+		arr.ontimeupdate = function() {
+			var af = arr.currentTime
+			var h = Math.floor(af / 3600)
+			var f = Math.floor(af / 60)
+			var s = Math.floor(af % 60)
+			h = h < 10 ? h = '0' + h : h;
+			f = f < 10 ? f = '0' + f : f;
+			s = s < 10 ? s = '0' + s : s;
+			ad[0].innerHTML = h + ':' + f + ':' + s;
+			if(arr.currentTime > 0) {
+				aa[0].style.width = arr.currentTime / arr.duration * 100 + '%'
+			}
+		}
+		quan.onclick = function() {
+			arr.webkitRequestFullScreend();
+		};
+		arr.onended = function() {
+			ad[0].innerHTML = 0 + 0 + ':' + 0 + 0 + ':' + 0 + 0;
+			ad[1].innerHTML = 0 + 0 + ':' + 0 + 0 + ':' + 0 + 0;
+			aa[1].style.width = 0 + '%';
+		}
+
+		$('.video_head_bg').click(function() {
+			$('.video_top').toggle();
+			$('.video_bottop').toggle();
+			setTimeout(function() {
+				$('.video_top').fadeOut();
+				$('.video_bottop').fadeOut();
+			}, 5000);
+		})
+	</script>
+	<script type="text/javascript" src="/yixue/public/ckplayer/ckplayer.js"></script>
+	<script type="text/javascript">
+		var status = $("#status").val();
+		if(status == 1){
+			var jiami = new Jiami();
+
+			if(getUrlParam("url") == null){
+				var videoObject = {
+					container: '.video_head',//“#”代表容器的ID，“.”或“”代表容器的class
+					variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+					flashplayer:false,//如果强制使用flashplayer则设置成true
+					autoplay : false,
+					loaded: "loadHandler",
+					video: "/yixue<?php echo ($first["video_path"]); ?>" //视频地址
+				};
+			}else{
+				var videoObject = {
+					container: '.video_head',//“#”代表容器的ID，“.”或“”代表容器的class
+					variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+					flashplayer:false,//如果强制使用flashplayer则设置成true
+					autoplay : false,
+					loaded: "loadHandler",
+					video: "/yixue"+jiami.base64decode(getUrlParam("url")) //视频地址
+				};
+			}
+
+
+			function loadHandler() {
+				player.addListener('time', timeHandler); //监听播放时间
+			}
+
+			var player=new ckplayer(videoObject);
+
+			function timeHandler(t) {
+                var kid = getUrlParam("id");
+                var time = t;
+                var chapter = getUrlParam("chapter");
+                if (chapter == null) {
+                    var chapter = $(".video_xqtwo>ul>li a span").first().data("id");
+                }
+                $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    data: {kid: kid, start_time: "", end_time: time, chapter: chapter},
+                    url: "/Video/saveTime/",
+                    success: function (data) {
+                        if (data.code != "200") {
+                            layer.open({
+                                content: "致命错误，请检查！！！"
+                            });
+                        }
+                    }
+                });
+				// cookie.set('time_' + videoID, t); //当前视频播放时间写入cookie
+			}
+
+			function getUrlParam(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+				var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+				if (r != null) return unescape(r[2]); return null; //返回参数值
+			}
+		}else if(status == "0"){
+			layer.open({
+				content : "观看视频前，您需要加入该课程",
+				btn : "我知道了"
+			});
+		}
+	</script>
+	<script>
+		$(function(){
+				var id = <?php echo ($class_id); ?>;
+				var zhangjieURL = window.location.search;
+				var zhangjieId = zhangjieURL.split("&")[1].slice(8);
+				$(".lpk_foot .fl").click(function(){
+					$.ajax({
+						type:"post",
+						url:"<?php echo U('Video/collect');?>",
+						data:{id:id,zhangjieId:zhangjieId},
+						success:function(data){
+							if(data=="ok"){
+								
+								
+								layer.open({
+									content: '收藏成功',
+									skin: 'msg',
+									time: 2 //2秒后自动关闭
+								});
+								location.reload();
+							}
+							if(data=="exist"){
+								layer.open({
+									content: '您已收藏该视频',
+									skin: 'msg',
+									time: 2 //2秒后自动关闭
+								});
+							}
+						}
+					});
+				})
+				$(".lpk_foot_color").click(function(){
+					var id = <?php echo ($class_id); ?>;
+					$.ajax({
+						type : "post",
+						dataType : "json",
+						url : "<?php echo U('Video/inStudy');?>",
+						data : {id : id},
+						success : function(data){
+							if(data == "ok"){
+								layer.open({
+									content : "加入成功",
+									btn : "我知道了"
+								});
+                                setTimeout(function () {
+									location.reload();
+								},1000);
+							}else if(data == "exist")
+							{
+								layer.open({
+									content : "您已经加入过该课程",
+									btn : "我知道了"
+								});
+							}
+						}
+					});
+				});
+			});
+	</script>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>_pass</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/lb/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/css/index.css" />
+	</head>
+
+	<body>
+		<header class="clearfix" style="z-index: 1000;">
+			<div class="fl left">
+				<a href="{:U('MeSet/index')}"> <span class="glyphicon glyphicon-menu-left"></span></a>
+			</div>
+			<div class="fl center">
+				修改密码
+			</div>
+			<div class="fr right" id="bainji1">
+
+			</div>
+		</header>
+		<div type="text/css" style="height: 5rem;"></div>
+		<div class="xg_pass">
+			<form action="" method="post">
+				<div class="clearfix xg_pass_main">
+					<div class="fl left">
+						当前密码:
+					</div>
+					<div class="fl right">
+						<input type="password" name="password" id="oldpass" value="" placeholder="请输入6~12位字符" />
+					</div>
+				</div>
+				<div class="clearfix xg_pass_main">
+					<div class="fl left">
+						新的密码:
+					</div>
+					<div class="fl right">
+						<input type="password" name="newpassword" id="newpassword" value="" placeholder="请输入6~12位字符"/>
+					</div>
+				</div>
+				<div class="clearfix xg_pass_main">
+					<div class="fl left">
+						确认密码:
+					</div>
+					<div class="fl right">
+						<input type="password" name="newpassword1" id="newpassword1" value="" placeholder="请输入6~12位字符"/>
+					</div>
+				</div>
+				<button class="mima">提交</button>
+
+			</form>
+		</div>
+
+		<script src="__ROOT__/public/home/js/jquery.min.js" type="text/javascript"></script>
+		<script src="__ROOT__/public/js/layer/mobile/layer.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			// function tijiao(){
+				$(".mima").click(function(){
+					var oldpass=$("#oldpass").val();
+					var newpassword=$("#newpassword").val();
+					var newpassword1=$("#newpassword1").val();
+					if(oldpass.length<6){
+						layer.open({
+						    content: '请输入6-18位的密码',
+						    skin: 'msg',
+						    time: 2 //2秒后自动关闭
+						});
+					}else if(newpassword.length<6 || newpassword1.length<6){
+						layer.open({
+						    content: '请输入6-18位的新密码',
+						    skin: 'msg',
+						    time: 2 //2秒后自动关闭
+						});
+					}else{
+						console.log(111);
+						$.ajax({
+							url:"__APP__/EditPassword/edit",
+							type:"post",
+							data:{oldpass:oldpass,newpassword:newpassword,newpassword1:newpassword1},
+							success:function(data){
+								if(data=='1'){
+									layer.open({
+									    content: '修改成功',
+									    skin: 'msg',
+									    time: 2 //2秒后自动关闭
+									});
+									window.location.href="__APP__/Login.html";
+								}else if(data=='no'){
+									layer.open({
+									    content: '修改失败',
+									    skin: 'msg',
+									    time: 2 //2秒后自动关闭
+									});
+								}else if(data=='kong'){
+									layer.open({
+									    content: '旧密码有误！',
+									    skin: 'msg',
+									    time: 2 //2秒后自动关闭
+									});
+								}else if(data=='noteq'){
+									layer.open({
+									    content: '新密码输入不一致',
+									    skin: 'msg',
+									    time: 2 //2秒后自动关闭
+									});
+								}
+							},
+							error:function(){
+								layer.open({
+									    content: 'error',
+									    skin: 'msg',
+									    time: 2 //2秒后自动关闭
+									});
+							}
+						})
+					}
+					return false;
+				});
+			// }
+		</script>
+
+
+	</body>
+	
+
+</html>

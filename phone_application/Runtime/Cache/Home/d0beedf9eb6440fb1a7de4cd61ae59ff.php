@@ -1,0 +1,46 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>jrTOPIC</title>
+		<link rel="stylesheet" type="text/css" href="/yixue/Public/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="/yixue/Public/lb/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/yixue/Public/css/index.css" />
+	</head>
+	<body style="background: white;">
+		<header class="clearfix">
+			<div class="fl left">
+				<a href="/yixue/index.php/TkTopic.html"> <span class="glyphicon glyphicon-menu-left"></span></a>
+			</div>
+			<div class="fl center">
+				历年真题
+			</div>
+			<div class="fr right"></div>
+		</header>
+		<div type="text/css" style="height: 5rem;"></div>
+		<div class="timu">
+			<h3>口腔执业助理医师<br />口腔执业助理医师(四) <br />第一单元</h3>
+			<p style="margin-top: 2rem;">考试总分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;150分</p>
+			<p>考试时长&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9分钟</p>
+			<p>合格分数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;90分</p>
+			<p>考试题数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;150道</p>
+		</div>
+		<div class="ksjs">
+			考试介绍：<br />总题数：150道题&nbsp;&nbsp;&nbsp;第题一分
+		</div>
+		<div class="jr">
+			<a href="javascript:;">进入考试</a>
+			<!--进入 ti.html  有小点区别-->
+		</div>
+	</body>
+	<script src="/yixue/Public/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/yixue/Public/js/cycle.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/yixue/Public/js/raphael.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

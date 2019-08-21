@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>{$webInfo.title}</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/lb/css/bootstrap.css" />
+	</head>
+
+	<body>
+    <!--头部 s-->
+   	<include file="Public/header" />
+	<!--头部 e-->
+
+		<div class="lpk">
+
+			<div class="lpk_head clearfix">
+				<include file="Public/denglu" />
+			</div>
+
+			<div class="sear clearfix">
+
+				<div class="fl">
+					<img src="__ROOT__/public/phone/img/search.png" />
+				</div>
+				<div class="fr">
+					<form method="post" id="cha_msg" action="__APP__/Chaxun_0">
+			            <input type="text" name="chaxun" id="chaxun" value="{$chaxun}" />
+			           
+			        </form>    
+				</div>
+
+
+
+			</div>
+			<div id="slides" class="slider-focus">
+				<div class="bd">
+					<ul>
+						
+						<volist name="banner" id="banner">
+							<li> 
+								<a href="{$banner.specifyurl}" style="display: block;width: 100%;height: 100%;"><img src='__ROOT__/{$banner.imageurl}' /></a>
+							</li>
+						</volist>		
+
+					</ul>
+				</div>
+				<div class="hd">
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<div class="main">
+				<div class="navicon clearfix">
+					<div class="list">
+						<div class="con">
+							<a href="__APP__/NewList_6.html">
+								<img src="__ROOT__/public/phone/img/navicon-1.png">
+								<p>新闻资讯</p>
+							</a>
+						</div>
+					</div>
+					<div class="list">
+						<div class="con">
+							<a href="__APP__/PictureList_17.html">
+								<img src="__ROOT__/public/phone/img/navicon-2.png">
+								<p>慈善人物</p>
+							</a>
+						</div>
+					</div>
+					<div class="list">
+						<div class="con">
+							<a href="__APP__/NewList_28.html">
+								<img src="__ROOT__/public/phone/img/navicon-3.png">
+								<p>地方慈善</p>
+							</a>
+						</div>
+					</div>
+					<div class="list">
+						<div class="con">
+							<a href="__APP__/Vote_{$now_hd.id}.html">
+								<img src="__ROOT__/public/phone/img/navicon-4.png">
+								<p>投票系统</p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- 新闻资讯  s -->
+				<div class="news_index">
+					<div class="index_tit clearfix">
+							<span>新闻资讯</span>
+						<a href="__APP__/NewList_6.html">
+							<img src="__ROOT__/public/phone/img/right-jt.png">
+						</a>
+					</div>
+					<div class="index-newlist">
+						<ul>
+
+							<volist name="xw_news" id="xw_news">
+							<li>
+								<div class="newlist-sy clearfix">
+									
+										<div class="img">
+									<a href="__APP__/NewShow_{$xw_news.id}.html">
+										<img src="__ROOT__/{$xw_news.imageurl}" />
+									</a>
+									</div>
+									<div class="text" style="position: relative;">
+										<p class="title">
+											<a class="lpka"  href="__APP__/NewShow_{$xw_news.id}.html">{$xw_news.title}</a>
+											<!-- <a class="lpka1" href="__APP__/NewShow_{$xw_news.id}.html">描述：{$xw_news.miaoshu|msubstr=0,15}</a> -->
+										</p>
+										<p class="xnav clearfix">
+											<span><a href="__APP__/NewShow_{$xw_news.id}.html"><img src="__ROOT__/public/phone/img/pinglun.png"></a></span>
+											<span id="feng" class="feng"><a href="javascript:;"><img src="__ROOT__/public/phone/img/zhuanfa.png"></a></span>
+											<i class="time">{$xw_news.dateandtime}</i>
+										</p>
+										<div class="bdsharebuttonbox" style="position: absolute;bottom: 18px;left: 24px;display: none;">
+											<a href="#" class="bds_more" data-cmd="more"></a>
+											<a href="#" class="popup_sqq" data-cmd="sqq" title="QQ好友" style="background-position: 0px -2652px;"></a>
+											<!--<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>-->
+											<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+											<!--<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>-->
+											<!--<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>-->
+											<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							</volist>
+
+						</ul>
+					</div>
+				</div>
+				<!-- 新闻资讯 e -->
+				<!-- 慈善书画院  s -->
+				<div class="news_index">
+					<div class="index_tit clearfix">
+						
+							<span>慈善书画院</span>
+						<a href="__APP__/NewList_12.html">
+							<img src="__ROOT__/public/phone/img/right-jt.png">
+						</a>
+					</div>
+					<div class="index-newlist">
+						<ul>
+							
+
+							<volist name="cssh" id="cssh">
+							<li>
+								<div class="newlist-sy clearfix">
+									<a href="__APP__/NewShow_{$cssh.id}.html">
+										<div class="img">
+										<img src="__ROOT__/{$cssh.imageurl}" />
+									</a>
+									</div>
+									<div class="text">
+										<p class="title">
+											<a href="__APP__/NewShow_{$cssh.id}.html">{$cssh.title}</a>
+										</p>
+										<p class="xnav clearfix">
+											<span><a href="__APP__/NewShow_{$cssh.id}.html"><img src="__ROOT__/public/phone/img/pinglun.png"></a></span>
+											<span><a href="__APP__/NewShow_{$cssh.id}.html"><img src="__ROOT__/public/phone/img/zhuanfa.png"></a></span>
+											<i class="time">{$cssh.dateandtime}</i>
+										</p>
+									</div>
+								</div>
+							</li>
+							</volist>
+
+
+							
+						</ul>
+					</div>
+				</div>
+				<!-- 慈善书画院 e -->
+				<!-- 慈善组织  s -->
+				<div class="news_index">
+					<div class="index_tit clearfix">
+						
+							<span>慈善组织</span>
+						<a href="__APP__/NewList_21.html">
+							<img src="__ROOT__/public/phone/img/right-jt.png">
+						</a>
+					</div>
+					<div class="index-newlist">
+						<ul>
+							
+							<volist name="cszz" id="cszz">
+								<li>
+									<div class="newlist-sy clearfix">
+										<div class="img">
+											<a href="__APP__/NewShow_{$cszz.id}.html"><img src="__ROOT__/{$cszz.imageurl}" /></a>
+										</div>
+										<div class="text">
+											<p class="title">
+												<a class="lpka" href="__APP__/NewShow_{$cszz.id}.html">{$cszz.title}</a>
+												<!--<a class="lpka1" href="__APP__/NewShow_{$cszz.id}.html">{$cszz.miaoshu|msubstr=0,15}</a>-->
+											</p>
+											<p class="xnav clearfix">
+												<span><a href="__APP__/NewShow_{$cszz.id}.html"><img src="__ROOT__/public/phone/img/pinglun.png"></a></span>
+												<span><a href="__APP__/NewShow_{$cszz.id}.html"><img src="__ROOT__/public/phone/img/zhuanfa.png"></a></span>
+												<i class="time">{$cszz.dateandtime}</i>
+											</p>
+										</div>
+									</div>
+								</li>
+							</volist>
+
+
+						</ul>
+					</div>
+				</div>
+				<!-- 慈善组织 e -->
+				<!-- 爱心助力 s -->
+				<div class="axzl_index">
+					<div class="index_tit clearfix">
+						
+							<span>爱心助力</span>
+						<a href="__APP__/NewList_49.html">
+							<img src="__ROOT__/public/phone/img/right-jt.png">
+						</a>
+					</div>
+					<div class="axzllist">
+						<ul>
+							
+							<volist name="axzl" id="axzl">
+								<li>
+									<div class="axzllist-sy">
+										<a href="__APP__/NewShow_{$axzl.id}.html">
+											<p class="title">{$axzl.title|msubstr=0,15}</p>
+											<p class="time">{$axzl.dateandtime}</p>
+											<p class="text">帮助信息：{$axzl.content|msubstr=0,70}</p>
+										</a>
+									</div>
+								</li>
+							</volist>
+
+						</ul>
+					</div>
+
+				</div>
+				<!-- 爱心助力 e -->
+
+			</div>
+			<include file="Public/footer" />
+
+		</div>
+	</body>
+	<script src="__ROOT__/public/phone/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/public/phone/js/TouchSlide.1.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/public/phone/js/inde.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		TouchSlide({
+			slideCell: "#slides",
+			titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+			mainCell: ".bd ul",
+			effect: "leftLoop",
+			autoPage: true, //自动分页
+			autoPlay: true //自动播放
+		});
+	</script>
+
+</html>

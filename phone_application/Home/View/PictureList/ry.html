@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>荣誉_石家庄中医医院</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="lb/css/bootstrap.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/picMove.js"></script>
+		<script src="js/screen.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var page = 1;
+			var finished = 0;
+			var sover = 0;
+
+			//如果屏幕未到整屏自动加载下一页补满  
+			var setdefult = setInterval(function() {
+				if(sover == 1)
+					clearInterval(setdefult);
+				else if($(".prolist").height() < $(window).height())
+					loadmore($(window));
+				else
+					clearInterval(setdefult);
+			}, 500);
+
+			//加载完  
+			function loadover() {
+				if(sover == 1) {
+					var overtext = "Duang～到底了";
+					$(".loadmore").remove();
+					if($(".loadover").length > 0) {
+						$(".loadover span").eq(0).html(overtext);
+					} else {
+						var txt = '<div class="loadover" style="margin-bottom: 6rem;"><span>' + overtext + '</span></div>'
+						$("#wrapper").append(txt);
+					}
+				}
+			}
+
+			//加载更多  
+			var vid = 0;
+
+			function loadmore(obj) {
+				if(finished == 0 && sover == 0) {
+					var scrollTop = $(obj).scrollTop();
+					var scrollHeight = $(document).height();
+					var windowHeight = $(obj).height();
+
+					if($(".loadmore").length == 0) {
+						var txt = '<div class="loadmore"><span class="loading"></span>加载中..</div>'
+						$("#wrapper").append(txt);
+					}
+
+					if(scrollTop + windowHeight - scrollHeight <= 50) {
+						//此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作  
+
+						//防止未加载完再次执行  
+						finished = 1;
+
+						var result = "";
+						for(var i = 0; i < 3; i++) {
+							vid++;
+							result += '<div class="fl">' +
+								' <a href="" class="">' +
+								'<div class="le">' +
+								'<img src="img/tuwen2.gif" />' +
+								'</div>' +
+								'  <div class="ri">' +
+								'<h3>同仁牛黄清心丸</h3>' +
+								'</div>' +
+								' </a>' +
+								'</div>'
+						}
+
+						setTimeout(function() {
+							//$(".loadmore").remove();  
+							$('.prolist').append(result);
+							page += 1;
+							finished = 0;
+							//最后一页  
+							if(page == 3) {
+								sover = 1;
+								loadover();
+							}
+						}, 1000);
+					}
+				}
+			}
+			//页面滚动执行事件  
+			$(window).scroll(function() {
+				loadmore($(this));
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<div class="lpk_btn" >
+			<span class="glyphicon glyphicon-align-right"></span>
+		</div>
+		<div class="child_bg"></div>
+		<div class="nav">
+			<div class="nav_main">
+				<ul>
+					<li>
+						<a href="index.html">首页</a>
+						<ul></ul>
+					</li>
+					<li>
+						<a href="javascript:;">走进中医院</a>
+						<ul>
+							<li>
+								<a href="danye.html">中医院介绍</a>
+							</li>
+							<li>
+								<a href="javascript:;">中医院荣誉</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">科室设置</a>
+						<ul></ul>
+					</li>
+					<li>
+						<a href="teacher.html">专家团队</a>
+						<ul></ul>
+					</li>
+					<li>
+						<a href="tuwen.html">就医服务</a>
+						<ul></ul>
+					</li>
+					<li>
+						<a href="javascript:;">健康同行</a>
+						<ul></ul>
+					</li>
+					<li>
+						<a href="javascript:;">联系我们</a>
+						<ul></ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="lpkhead">
+			<div class="logo">
+				<img src="img/logo.png" />
+			</div>
+			<div class="zi">
+				<img src="img/logo1.png" />
+			</div>
+		</div>
+
+		<div class="lpk_main" id="wrapper">
+			<div class="ry clearfix prolist">
+				<div class="fl">
+					<a href="" class="">
+						<div class="le">
+							<img src="img/tuwen2.gif" />
+						</div>
+						<div class="ri">
+							<h3>同仁牛黄清心丸</h3>
+						</div>
+					</a>
+				</div>
+				<div class="fl">
+					<a href="" class="">
+						<div class="le">
+							<img src="img/tuwen2.gif" />
+						</div>
+						<div class="ri">
+							<h3>同仁牛黄清心丸</h3>
+						</div>
+					</a>
+				</div>
+				<div class="fl">
+					<a href="" class="">
+						<div class="le">
+							<img src="img/tuwen2.gif" />
+						</div>
+						<div class="ri">
+							<h3>同仁牛黄清心丸</h3>
+						</div>
+					</a>
+				</div>
+				<div class="fl">
+					<a href="" class="">
+						<div class="le">
+							<img src="img/tuwen2.gif" />
+						</div>
+						<div class="ri">
+							<h3>同仁牛黄清心丸</h3>
+						</div>
+					</a>
+				</div>
+
+			</div>
+		</div>
+		<div class="lpkfoot">
+			<div class="footer">
+				<div class="footer_main">
+					<p>
+						<a href="javascript:;">版权所有： 北京同仁堂石家庄中医医院</a>
+					</p>
+					<p class="fr right">技术支持：
+						<a href="http://www.tygytc.com" target="_blank">太原国远天成网络科技有限公司</a>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+	<!--<script type="text/javascript">
+		var height = window.screen.height;
+		var newheight = height - 218;
+		$('.lpk_main').height(newheight)
+	</script>-->
+	<script type="text/javascript">
+		$('.nav_main>ul>li').click(function() {
+			var index = $('.nav_main>ul>li').index(this);
+			$('.nav_main>ul>li>ul').eq(index).toggle();
+		})
+		$('.lpk_btn').click(function() {
+			$('.nav').toggle()
+		});
+	</script>
+
+</html>

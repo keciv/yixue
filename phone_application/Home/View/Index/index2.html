@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>{$webInfo.title}</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/lb/css/bootstrap.css" />
+		<style type="text/css">
+			#box>div{
+				width: 100%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<include file="Public/header" />
+
+		<div id="box" style="width: 100%;"></div>
+
+		<div class="list_gd">
+			<div class="list_gd_main">
+				<div class="list_hid" id="screen">
+					<ul class="clearfix">
+						
+						<volist name="teacher" id="teacher">	
+						<li>
+							<a href="__APP__/PictureShow_{$teacher.id}.html">
+								<div class="top parent">
+									<img src="__ROOT__/public/home/img/logo2.png" />
+								</div>
+								<div class="bottom clearfix">
+									<div class="fl left">
+										<img src="__ROOT__/{$teacher.imageurl}" />
+									</div>
+									<div class="fl center">
+										<h3>{$teacher.title}</h3>
+										<div class="h">
+											<p>科室：{$teacher.keshi}</p>
+											<p>职称：{$teacher.zhicheng}</p>
+											<p>专长：{$teacher.zhuanchang|msubstr=0,30}</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						</volist>
+						
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<include file="Public/footer" />
+
+	</body>
+	<script src="__ROOT__/public/phone/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/public/phone/js/picMove.js"></script>
+	<script src="__ROOT__/public/phone/js/screen.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		lpk('screen');
+		var width = window.screen.width;
+		$('.list_gd li').width(width - 20);
+	</script>
+	<script type="text/javascript">
+		$('.nav_main>ul>li').click(function(){
+			var index=$('.nav_main>ul>li').index(this);
+			$('.nav_main>ul>li>ul').eq(index).toggle();
+		})
+		$('.lpk_btn').click(function(){
+			$('.nav').toggle()
+			
+		})
+	</script>
+	<script>
+		$(document).ready(function() {
+			var list = [{$banner_array}];
+
+			$('#box').fade({
+				url: list,
+				//				boxHei: 832
+			}).css({
+				margin: '0 auto'
+			})
+		})
+	</script>
+
+</html>

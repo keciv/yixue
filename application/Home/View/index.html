@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>{$lanmuNow.title}_恒达钢结构</title>
+		<!-- <meta name="Keywords" content="山西恒达钢结构有限公司">
+		<meta name="Description" content="山西恒达钢结构有限公司"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="__ROOT__/public/home/css/pintuer.css">
+		<script src="__ROOT__/public/home/js/jquery.js"></script>
+		<script src="__ROOT__/public/home/js/pintuer.js"></script>
+		<script src="__ROOT__/public/home/js/index.js"></script>
+		<script type="text/javascript" src="__ROOT__/public/home/js/jquery.SuperSlide2.js"></script>
+		<link rel="stylesheet" href="__ROOT__/public/home/css/css.css">
+		<link rel="stylesheet" href="__ROOT__/public/home/css/index.css">
+		<link rel="stylesheet" href="__ROOT__/public/home/css/style.css">
+		<script src="__ROOT__/public/home/js/respond.js"></script>
+		<script type="text/javascript">
+		    $(function(){
+				$('.onlyone_xq').children('p').each(function(){
+					var d = $(this).children('img');
+					if(d.length>0)
+					{
+						$(this).css('text-indent',0);
+					}
+					else{
+						$(this).css('text-indent','2em');
+					}
+				})	
+			})
+		</script>
+
+	</head>
+
+	<body>
+<!-- 公共头部包含 -->
+  <include file="Public/header" />
+<!-- 公共头部包含end -->
+		<!-- banner -->
+		<include file="Public/Banner" />
+		
+		<div class="ny container clearfix">
+			<include file="Public/left_menu" />
+			<div class="right-menu">
+				<include file="Public/Location" />
+				<div class="nyxq">
+					<div class="onlyone_xq">
+<if condition="$PID eq 22">
+<!--百度地图-->
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jeSBApWu1oX17UkLinw34O6TxlGtiUsn"></script>
+   <div style="width:900px;height:340px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+   <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(112.449662,37.434369),16);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"",title:"山西恒达钢结构有限公司",imageOffset: {width:-46,height:-21},position:{lat:37.434398,lng:112.448297}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+</if>
+						{$content.content}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 底部 s-->
+		<include file="Public/footer" />
+
+	</body>
+	<script src="__ROOT__/public/home/js/lpk.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

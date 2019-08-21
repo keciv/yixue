@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>{$lanmuNow.title}_{$title}</title>
+	<link href="__ROOT__/public/css/web_style.css" rel="stylesheet" media="screen" type="text/css">
+	<script type="text/javascript" src="__ROOT__/public/js/jquery-1.9.1.min.js"></script>
+    <!--banner-->
+    <link rel="stylesheet" href="__ROOT__/public/css/swiper-3.4.2.min.css"/>
+    <script src="__ROOT__/public/js/swiper-3.4.2.min.js"></script>
+    <link href="__ROOT__/public/css/datouwang.css" rel="stylesheet" media="screen" type="text/css">
+    <link rel="stylesheet" type="text/css" href="__ROOT__/public/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="__ROOT__/public/css/gd.css">
+    <script type="text/javascript">
+        $(function(){
+		$('.aboutzh').children('p').each(function(){
+		var d = $(this).children('img');
+		if(d.length>0)
+		{
+			$(this).css('text-indent',0);
+		}
+		})	
+	})
+</script>
+</head>
+<body>
+    <!--头部 s-->
+   	<include file="Public/header" />
+	<!--头部 e-->
+	<!--banner s-->
+	<div class="swiper-container">
+	    <!--Banner s-->
+	   	<include file="Public/Banner" />
+		<!--Banner e-->
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	    
+	    <!-- 如果需要导航按钮 -->
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-button-next"></div>
+	</div>
+	<script>        
+	  var mySwiper = new Swiper ('.swiper-container', {
+	    direction: 'horizontal',
+	    loop: true,
+	    speed:1000,
+	    
+	    // 如果需要分页器
+	    pagination: '.swiper-pagination',
+	    
+	    // 如果需要前进后退按钮
+	    nextButton: '.swiper-button-next',
+	    prevButton: '.swiper-button-prev',
+
+	  }) 
+	  $(document).ready(function () {
+		 var hei= $(window).height()-154;
+		 $('.swiper-container').css('height',hei);
+		 $('.swiper-container .swiper-wrapper .swiper-slide img').css('height',hei);
+		})       
+    </script>
+	<!--banner e-->
+    <!--主题内容 s-->
+    <!-- 二级导航 -->
+	<div class="ejnav">
+		<div class="ejnavzh">			
+				<!-- 当前位置 s -->
+				<include file="Public/Location" />
+				<!--当前位置 e-->
+				<div style="clear:both"></div>
+				<!-- 左侧栏 s -->
+				<include file="Public/left_menu" />
+				<!--左侧栏 e-->
+				<div style="clear:both"></div>
+		</div>
+	</div>
+	<div class="about">
+		<div class="aboutzh">
+			<ul class="news">
+				<volist name="pageData.news" id="new">
+				<li class="newsnr">
+					<h4>
+						<a href="__APP__/NewShow_{$new.newid}.html">{$new.title|msubstr=0,20}</a>
+					</h4>
+					<span>发表时间：{$new.dateandtime}</span>
+					<p>{$new.content|msubstr=0,120}<span class="xq"><a href="__APP__/NewShow_{$new.newid}.html">详情&gt;&gt;</a></span></p>
+				</li>
+				</volist>
+				<div style="clear:both"></div>
+			</ul>
+			<div style="clear:both"></div>
+			<!-- 分页 s-->
+			<include file="Public/Fenye" />
+			<!-- 分页 e-->
+		</div>	
+	</div>
+	<div style="clear:both"></div>
+
+    <!--主题内容 e-->
+    <!--foot s-->
+<!--footer-->
+<include file="Public/footer" />
+<!--footer end-->
+    <!--foot e-->
+    <script type="text/javascript" src="__ROOT__/public/js/gd.js"></script>
+
+    <script type="text/javascript">
+		$('ul.over li a').hover(
+			function(){
+			   $(this).children('.tit').animate({"bottom":"0"},600)
+			   $(this).children('.tit-bg').animate({"bottom":"0"},600)
+			},function(){
+			   $(this).children('.tit').animate({"bottom":"-30px"},600)
+			   $(this).children('.tit-bg').animate({"bottom":"-30px"},600)
+			}
+		)
+		
+	$(function(){
+    var wid = $(document).width();
+	$(".voice_2 ul li").each(function(){
+		var fold = $(this).find(".fold");
+		var unfold = $(this).find(".unfold");
+		if(fold.is(":hidden")){
+			$(this).width(wid/5*2-0.2);
+		}else{
+			$(this).width(wid/5-0.2);
+		}
+	})
+
+	$(".voice_2 ul li").click(function(){
+		var li_index = $(this).index();
+		$(this).animate({width:wid/5*2-0.2},200);
+		$(this).find(".unfold").show();
+		$(this).find(".fold").hide();
+		$(this).siblings().animate({width:wid/5-0.2},200);
+		$(this).siblings().find(".unfold").hide();
+		$(this).siblings().find(".fold").show();
+	})
+
+})
+</script>
+</body>
+</html>

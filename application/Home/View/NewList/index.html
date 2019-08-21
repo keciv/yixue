@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>{$lanmuNow.title}_恒达钢结构</title>
+		<!-- <meta name="Keywords" content="山西恒达钢结构有限公司">
+		<meta name="Description" content="山西恒达钢结构有限公司"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="__ROOT__/public/home/css/pintuer.css">
+		<script src="__ROOT__/public/home/js/jquery.js"></script>
+		<script src="__ROOT__/public/home/js/pintuer.js"></script>
+		<script src="__ROOT__/public/home/js/index.js"></script>
+		<script type="text/javascript" src="__ROOT__/public/home/js/jquery.SuperSlide2.js"></script>
+		<link rel="stylesheet" href="__ROOT__/public/home/css/css.css">
+		<link rel="stylesheet" href="__ROOT__/public/home/css/index.css">
+		<link rel="stylesheet" href="__ROOT__/public/home/css/style.css">
+		<script src="__ROOT__/public/home/js/respond.js"></script>
+	</head>
+
+	<body>
+<!-- 公共头部包含 -->
+  <include file="Public/header" />
+<!-- 公共头部包含end -->
+		<!-- banner -->
+		<include file="Public/Banner" />
+		
+		<div class="ny container clearfix">
+			<include file="Public/left_menu" />
+			<div class="right-menu">
+				<include file="Public/Location" />
+				<ul class="news_list">
+					
+					<volist name="pageData.news" id="new">
+						<a href="__APP__/NewShow_{$new.id}.html">
+							<li>
+								<div class="new_box">
+									<div class="new_date"><span>{$new.dateandtime|substr=5,6}</span><br> {$new.dateandtime|substr=0,4}
+									</div>
+									<div class="content_new">
+										<p>{$new.title|msubstr=0,30}</p>
+										{$new.content|msubstr=0,80}
+									</div>
+								</div>
+							</li>
+						</a>
+					</volist>	
+					
+				</ul>
+
+			<!-- 分页 -->
+			<include file="Public/Fenye" />
+			</div>
+		</div>
+
+<!-- 底部 s-->
+		<include file="Public/footer" />
+
+	</body>
+	<script src="__ROOT__/public/home/js/lpk.js" type="text/javascript" charset="utf-8"></script>
+</html>

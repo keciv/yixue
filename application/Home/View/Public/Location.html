@@ -1,0 +1,11 @@
+<div class="location">
+	<span>您现在的位置：<a href="__APP__">首页</a> 
+		<volist name="location.LocationAll" id="location">
+			<if condition="$location['id'] eq 1">	
+				&gt;<a href="__APP__/Danye_2.html">{$location.title}</a>
+			<else/>	
+				&gt;<a href="__APP__/{$location.controller}_{$location.id}.html">{$location.title}</a>
+			</if>
+		</volist>
+	</span>
+</div>

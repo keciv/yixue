@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{$new.title}_山西洪波制泵</title>
+  	<!-- <meta name="Keywords" content="山西天波制泵股份有限公司">
+  	<meta name="Description" content="山西天波制泵股份有限公司"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="__ROOT__/public/home/css/pintuer.css">
+    <script src="__ROOT__/public/home/js/jquery.js"></script>
+    <script src="__ROOT__/public/home/js/pintuer.js"></script>
+    <script src="__ROOT__/public/home/js/index.js"></script>
+    <script type="text/javascript" src="__ROOT__/public/home/js/jquery.SuperSlide2.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/home/css/css.css">
+    <link rel="stylesheet" href="__ROOT__/public/home/css/index.css">
+    <link rel="stylesheet" href="__ROOT__/public/home/css/style.css">
+    <script src="__ROOT__/public/home/js/respond.js"></script>
+</head>
+<body>
+<!-- 公共头部包含 -->
+  <include file="Public/header" />
+<!-- 公共头部包含end -->
+	<div class="ny container clearfix">	
+		<include file="Public/left_menu" />
+		<div class="right-menu">
+			<include file="Public/Location" />
+			<if condition='$parentID neq 4 or $parentID neq 6'>
+				<!-- 产品内页 if判断-->
+				<div class="product_con">
+			<else/>	
+				<!-- 图文内页 else -->
+		        <div class="pic_con">
+	        </if>
+	            <h3 class="pcxqtit">{$new.title}</h3>
+	            <!-- <div class="cpimg"><img src="__ROOT__/public/images/cp1.jpg"></div>
+	            <div class="tit"><span>产品说明</span></div> -->
+	            <div class="textcon">
+	                {$new.content}
+	            </div>
+	        </div>
+	        <!-- 图文内页 else -->
+	        <!-- <div class="pic_con">
+	            <h3 class="pcxqtit">WQ污水污物潜水电泵</h3>
+	            <div class="textcon">
+	                <p style="text-align:center"><img src="__ROOT__/public/images/rongyu.png"></p>
+	            </div>
+	        </div> -->
+	        <!-- 上下篇 s -->
+	        <div class="pageNavi">
+	            <div class="pageP">上一篇：<a href="__APP__/Picture{$LastNext.lastType}_{$LastNext.last.id}.html">{$LastNext.last.title}</a></div>
+	            <div class="pageN">下一篇：<a href="__APP__/Picture{$LastNext.nextType}_{$LastNext.next.id}.html">{$LastNext.next.title}</a></div>
+	        </div>
+	        <!-- 上下篇 e -->
+
+		</div>
+	</div>
+	
+<!--footer-->
+<include file="Public/footer" />
+<!--footer end-->
+</body>
+</html>

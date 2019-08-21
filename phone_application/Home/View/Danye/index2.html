@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>{$lanmuNow.title}_石家庄中医医院</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/lb/css/bootstrap.css" />
+	</head>
+
+	<body>
+
+		<include file="Public/headers" />
+		<!-- 这里是地图 -->
+			<if condition="$PID eq 11">
+				<!-- <h3>这里是地图</h3> -->
+			</if>	
+		<!-- 这里是地图 -->
+		<div class="lpk_main">
+			<div class="lpk_main_xq">
+				{$content.content}
+			</div>
+
+		</div>
+
+		<include file="Public/footers" />
+	</body>
+	<script src="__ROOT__/public/phone/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/public/phone/js/picMove.js"></script>
+	<script src="__ROOT__/public/phone/js/screen.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var height = window.screen.height;
+		var newheight = height - 218;
+		$('.lpk_main').height(newheight)
+	</script>
+	<script type="text/javascript">
+		$('.nav_main>ul>li').click(function() {
+			var index = $('.nav_main>ul>li').index(this);
+			$('.nav_main>ul>li>ul').eq(index).toggle();
+		})
+		$('.lpk_btn').click(function() {
+			$('.nav').toggle()
+		});
+		$(function() {
+			$('.lpk_main_xq').children('p').each(function() {
+				var d = $(this).children('img');
+				if(d.length > 0) {
+					$(this).css('text-indent', 0);
+					$(this).css('text-align', 'center');
+				}
+			})
+		})
+	</script>
+
+</html>

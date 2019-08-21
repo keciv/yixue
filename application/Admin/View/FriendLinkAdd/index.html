@@ -1,0 +1,147 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="__ROOT__/public/admin/favicon.ico" >
+<link rel="Shortcut Icon" href="__ROOT__/public/admin/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="__ROOT__/public/admin/lib/html5shiv.js"></script>
+<script type="text/javascript" src="__ROOT__/public/admin/lib/respond.min.js"></script>
+
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="__ROOT__/public/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/public/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
+
+<link rel="stylesheet" type="text/css" href="__ROOT__/public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/public/admin/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/public/css/style.css">
+<!--[if IE 6]>
+<script type="text/javascript" src="__ROOT__/public/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<link href="__ROOT__/public/admin/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="page-container">
+	<form method="post" class="form form-horizontal" id="form-friendlink-add">
+		<input type="hidden" id="caozuo" value="{$caozuo}" />
+		<input type="hidden" value="{$friendlink.id}" name="id" />
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>类型：</label>
+			<div class="formControls col-xs-8 col-sm-9 form_control">
+				<select id="type" name="type" class="input-text" style="width:200px;">
+						<option value="未选择">--请选择--</option>
+						<option value="友情链接" <if condition="$friendlink['type'] eq '友情链接'">selected</if>>友情链接</option>
+				        <option value="合作企业" <if condition="$friendlink['type'] eq '合作企业'">selected</if>>合作企业</option>
+					</select>
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input style="width:500px;" type="text" class="input-text" value="{$friendlink.title}" placeholder="" id="title" name="title">
+			</div>
+		</div>
+		<div class="row cl" id="pic" style="display:none">
+			<label class="form-label col-xs-4 col-sm-2">缩略图：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<div class="uploader-thum-container">
+				<input type="file" id="filePicker" name="filePicker"/>
+				<div id="fileList" class="uploader-list"><img id="img_filePicker" src="__ROOT__/{$friendlink.imageurl}" width="30px;" /></div>
+				<input type="hidden" id="hidden_filePicker" name="hidden_filePicker" value="{$friendlink.imageurl}"/>	
+				<input type="button" id="btn-star" class="btn btn-default btn-uploadstar radius ml-10" value="开始上传" onClick="upload('__APP__/Upload/upload','filePicker','form-friendlink-add','Friendlink');" />
+				</div>
+			</div>
+		</div> 
+		
+		<div class="row cl" id="url" style="display:none">
+			<label class="form-label col-xs-4 col-sm-2">链接地址：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input style="width:500px;" type="text" class="input-text" value="{$friendlink.linkurl}" placeholder="" name="linkurl">
+				</br>
+				<span class="c-red"><b>*地址前请加“ http:// ”,如不填写地址，请输入“ # ” 符号！</b></span>
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<span class="btn btn-primary radius" id="tijiao">&nbsp;&nbsp;提交&nbsp;&nbsp;</span>
+				<button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__ROOT__/public/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/public/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__ROOT__/public/admin/static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/public/admin/static/h-ui.admin/js/H-ui.admin.js"></script> 
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__ROOT__/public/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__ROOT__/public/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="__ROOT__/public/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="__ROOT__/public/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="__ROOT__/public/admin/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/public/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__ROOT__/public/admin/lib/ueditor/1.4.3/ueditor.all.min.js"></script>
+<script type="text/javascript" src="__ROOT__/public/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="__ROOT__/public/js/jqueryForm.js"></script>
+<script type="text/javascript" src="__ROOT__/public/js/myJS.js"></script> 
+<script src="__ROOT__/public/js/jquery-form.js"></script>
+<script type="text/javascript">
+$(function(){
+	var ue = UE.getEditor('editor');
+	var type=$('#type').val();
+	$('#tijiao').click(function(){
+		var caozuo=$('#caozuo').val();
+		if(caozuo=="add")
+		{
+			$('#form-friendlink-add').attr('action','__APP__/FriendLinkAdd/add');
+		}
+		else if(caozuo=="edit")
+		{
+			$('#form-friendlink-add').attr('action','__APP__/FriendLinkAdd/edit');
+		}
+		$('#form-friendlink-add').submit();
+	})
+	//修改页面默认进来时
+	if(type=="友情链接")
+		{
+			$('#pic').hide();
+			$('#url').show();
+		}
+		else if(type=="合作企业")
+		{
+			$('#pic').show();
+			$('#url').show();
+		}
+	//添加页面选择	
+	$('#type').change(function(){
+		var type=$('#type').val();
+		if(type=="友情链接")
+		{
+			$('#pic').hide();
+			$('#url').show();
+		}
+		else if(type=="合作企业")
+		{
+			$('#pic').show();
+			$('#url').show();
+		}
+	})
+});
+</script>
+
+</body>
+</html>

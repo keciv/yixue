@@ -1,0 +1,6 @@
+phone_application/Runtime/*.php
+phone_application/Runtime/Home/*.php
+phone_application/Runtime/*.log
+application/Runtime/*.php
+application/Runtime/Admin/*.php
+application/Runtime/*.log

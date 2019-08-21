@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>{$lanmuNow.title}_{$title}</title>
+  <link rel="stylesheet" href="__ROOT__/public/phone/css/amazeui.min.css">
+  <link rel="stylesheet" href="__ROOT__/public/phone/css/app.css">
+</head>
+<body>
+<!--头部 s-->
+    <include file="Public/header" />
+<!--头部 e-->
+<!--Banner s-->
+  <include file="Public/Banner" />
+<!--Banner e-->
+
+<!-- 内容 -->
+<!-- 当前位置 s -->
+<include file="Public/Location" />
+<!--当前位置 e-->
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+  <!--列表标题-->
+  <div class="am-list-news-hd am-cf">
+      <a href="#" class="">
+        <h2>
+          <img src="__ROOT__/public/phone/images/logo1.png">{$lanmuNow.title}
+        </h2>
+      </a>
+      <span class="am-list-news-more am-fr">JMNH ART CENTER</span>
+  </div> 
+  <!-- 新闻内容 -->
+  <div class="am-list-news-bd" id="wrapper">
+    <ul class="am-list prolist">
+       
+    </ul>
+  </div>
+</div>
+
+
+<!--footer-->
+<include file="Public/footer" />
+<!--footer end-->
+<script type="text/javascript">
+ $(document).ready(function(){
+   $(".btn1").click(function(){
+   $(".jgxx").toggle();
+   });
+ });
+</script>
+<script>
+    $(function(){
+        $(".close").click(function(){
+			$(".modal-backdrop").css('display','none');
+            $(".box").css('display','none');
+            $('body').css({'height':'100%','overflow':'auto'})
+        });
+     
+	  $(".flw").click(function(){
+         $(".box").css('display','block');
+		 $(".modal-backdrop").css('display','block');
+		 $('body').css({'height':'100%','overflow':'hidden'})
+       });
+     
+    });
+</script>
+
+<script>
+      var page=1;  
+      var finished=0;  
+      var sover=0;  
+      <!----------------产品加载更多-------------------------->  
+      //如果屏幕未到整屏自动加载下一页补满  
+      var setdefult=setInterval(function (){  
+          if(sover==1)  
+              clearInterval(setdefult);     
+          else if($(".prolist").height()<$(window).height()/2)  
+              loadmore($(window));  
+          else  
+              clearInterval(setdefult);  
+      },50);  
+      //加载完  
+      function loadover(){  
+          if(sover==1)  
+          {     
+              var overtext="Duang～到底了";  
+              $(".loadmore").remove();  
+              if($(".loadover").length>0)  
+              {  
+                  $(".loadover span").eq(0).html(overtext);  
+              }  
+              else  
+              {  
+                  var txt='<div class="loadover"><span>'+overtext+'</span></div>'  
+                  $("#wrapper").append(txt);  
+              }  
+          }  
+      }  
+      //加载更多  
+      var vid=0;  
+      var paginalNum =5;
+      var ID="{$id}";
+      // alert(ID);
+      function loadmore(obj){  
+          if(finished==0 && sover==0)  
+          {  
+              var scrollTop = $(obj).scrollTop();  
+              var scrollHeight = $(document).height();  
+              var windowHeight = $(obj).height();  
+              if($(".loadmore").length==0)  
+              {  
+                  var txt='<div class="loadmore"><span class="loading"></span>加载中..</div>'  
+                  $("#wrapper").append(txt);  
+              }  
+              if (scrollTop + windowHeight -scrollHeight<=50 ) {  
+                  //此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作  
+                  //防止未加载完再次执行  
+                  finished=1;  
+                  var result = "";  
+                  
+                  $.ajax({
+                    url:'__APP__/GetDataNew/index',
+                    data:{id:ID,page:page,paginalNum:paginalNum},
+                    type:'post',
+                    dataType:'json',
+                    success:function(data){ 
+                      console.log(data);
+                     if(data.length>0){
+                        //防止未加载完再次执行  
+                        for(var i = 0; i < data.length; i++){  
+                            vid++;  
+                        //     result+='<li>'  
+                        //     +'<a href="PictureShow_' + data[i].newid + '.html"><img src="__ROOT__/' + data[i].imageurl + '" width="100" height="100"></a><p style="text-align:center;">' + data[i].titleshort + '</p>'  
+                        // +'</li>'
+                        // 
+                        
+                       /* data[i].content=data[i].content.substring(0,35);*/
+                   result+= 
+
+
+                  '<li class="am-g am-list-item-desced">'   
+                +'<a href="__APP__/NewShow_' + data[i].newid + '.html" class="am-list-item-hd">' + data[i].title + '</a><span>发布时间：' + data[i].dateandtime +'</span><div class="am-list-item-text">'+ data[i].content + '<span class="xq11"><a href="__APP__/NewShow_' + data[i].newid + '.html">详情&gt;&gt;</a></span></div>' 
+                +'</li>'
+                        }  
+                          $('.prolist').append(result);  
+                            page+=1; 
+                            finished=0; 
+                     }else{
+                        sover=1;  
+                        loadover();
+                     }
+                   }
+                })  
+              }  
+          }  
+      }  
+      //页面滚动执行事件  
+      $(window).scroll(function (){  
+          loadmore($(this));  
+      });  
+    </script> 
+ 
+</body>
+</html>

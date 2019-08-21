@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>{$lanmuNow.title}_{$title}</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/lb/css/bootstrap.css" />
+	</head>
+
+	<body>
+
+    <!--头部 s-->
+   	<include file="Public/header" />
+	<!--头部 e-->
+		<div class="lpk">
+			<div class="lpk_head clearfix">
+				<include file="Public/denglu" />
+			</div>
+			<include file="Public/left_menu" />
+			<div class="main">
+				<div class="news_index">
+					<div class="index-newlist">
+						<ul class="prolist">
+							
+
+							<!-- <li>
+								<div class="newlist-sy clearfix">
+									<div class="img">
+										<a href="info.html"><img src="./img/new1.jpg" /></a>
+									</div>
+									<div class="text">
+										<p class="title">
+											<a href="info.html">标题标题标题标题标题题标题标题标题标题标题标题标标题标题标题...</a>
+										</p>
+										<p class="xnav clearfix">
+											<span><a href="info.html#abc"><img src="./img/pinglun.png"></a></span>
+											<span><a href="#"><img src="./img/zhuanfa.png"></a></span>
+											<i class="time">2018-07-12</i>
+										</p>
+
+
+									</div>
+								</div>
+							</li> -->
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+  <script src="__ROOT__/public/phone/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script src="__ROOT__/public/phone/js/inde.js" type="text/javascript" charset="utf-8"></script>
+<script>
+      var page=1;  
+      var finished=0;  
+      var sover=0;  
+      <!----------------产品加载更多-------------------------->  
+      //如果屏幕未到整屏自动加载下一页补满  
+      var setdefult=setInterval(function (){  
+          if(sover==1)  
+              clearInterval(setdefult);     
+          else if($(".prolist").height()<$(window).height()/2)  
+              loadmore($(window));  
+          else  
+              clearInterval(setdefult);  
+      },50);  
+      //加载完  
+      function loadover(){  
+          if(sover==1)  
+          {     
+              var overtext="Duang～到底了";  
+              $(".loadmore").remove();  
+              if($(".loadover").length>0)  
+              {  
+                  $(".loadover span").eq(0).html(overtext);  
+              }  
+              else  
+              {  
+                  var txt='<div class="loadover"><span>'+overtext+'</span></div>'  
+                  $("#wrapper").append(txt);  
+              }  
+          }  
+      }  
+      //加载更多  
+      var vid=0;  
+      var paginalNum =5;
+      var ID="{$parentID}";
+      // alert(ID);
+      function loadmore(obj){  
+          if(finished==0 && sover==0)  
+          {  
+              var scrollTop = $(obj).scrollTop();  
+              var scrollHeight = $(document).height();  
+              var windowHeight = $(obj).height();  
+              if($(".loadmore").length==0)  
+              {  
+                  var txt='<div class="loadmore"><span class="loading"></span>加载中..</div>'  
+                  $("#wrapper").append(txt);  
+              }  
+              if (scrollTop + windowHeight -scrollHeight<=50 ) {  
+                  //此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作  
+                  //防止未加载完再次执行  
+                  finished=1;  
+                  var result = "";  
+                  
+                  $.ajax({
+                    url:'__APP__/GetData/index',
+                    data:{id:ID,page:page,paginalNum:paginalNum},
+                    type:'post',
+                    dataType:'json',
+                    success:function(data){ 
+                      console.log(data);
+                     if(data.length>0){
+                        //防止未加载完再次执行  
+                        for(var i = 0; i < data.length; i++){  
+                            vid++;  
+
+                   result+= 
+                     '<li><div class="newlist-sy clearfix"><div class="img"><a href="__APP__/NewShow_' + data[i].id + '.html"><img src="__ROOT__/' + data[i].imageurl + '" /></a></div><div class="text" style="position: relative;"><p class="title"><a class="lpka" href="__APP__/NewShow_' + data[i].id + '.html">' + data[i].title + '</a></span><i class="time">时间：' + data[i].dateandtime + '</i><i class="time">来源：' + data[i].source + '</i></p></div></div></li>'
+
+                		
+
+                        }  
+                          $('.prolist').append(result);  
+                            page+=1; 
+                            finished=0; 
+                     }else{
+                        sover=1;  
+                        loadover();
+                     }
+                   }
+                })  
+              }  
+          }  
+      }  
+      //页面滚动执行事件  
+      $(window).scroll(function (){  
+          loadmore($(this));  
+      });  
+    </script> 
+
+</html>

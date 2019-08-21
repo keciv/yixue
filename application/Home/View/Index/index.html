@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>{$webInfo.title}</title>
+		<meta name="keywords" content="{$webInfo.keywords}">
+		<meta name="description" content="{$webInfo.description}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://www.hdgg1998.com/public/home/css/pintuer.css">
+		<script src="http://www.hdgg1998.com/public/home/js/jquery.js"></script>
+		<script src="http://www.hdgg1998.com/public/home/js/pintuer.js"></script>
+		<script src="http://www.hdgg1998.com/public/home/js/index.js"></script>
+		<script type="text/javascript" src="http://www.hdgg1998.com/public/home/js/jquery.SuperSlide2.js"></script>
+		<link rel="stylesheet" href="http://www.hdgg1998.com/public/home/css/css.css">
+		<link rel="stylesheet" href="http://www.hdgg1998.com/public/home/css/index.css">
+		<script src="http://www.hdgg1998.com/public/home/js/respond.js"></script>
+	</head>
+
+	<body>
+		<!-- 公共头部包含 -->
+  <include file="Public/header" />
+<!-- 公共头部包含end -->
+		<!-- banner -->
+		<include file="Public/Banner" />
+		<!-- 热门搜索 -->
+		<div class="search">
+			<div class="container">
+				<p>
+					<b>热搜产品：</b>
+					<a href="#">山西钢结构</a>|
+					<a href="#">山西彩钢瓦</a>|
+					<a href="#">山西岩棉板</a>|
+					<a href="#">山西复合板</a>|
+					<a href="#">山西钢结构厂家</a>|
+					<a href="#">太原钢结构</a>|
+					<a href="#">钢结构</a>
+				</p>
+			</div>
+		</div>
+
+		<!-- 合作伙伴 -->
+		<div id="Carousel">
+			<div class="container">
+				<div class="bt mm">
+					<div class="title_h3">
+						<h3><a href="#">恒达钢结构 — 合作客户</a></h3>
+						<span>为您展示我们合作过的客户</span>
+						<!-- <a href="__APP__/PictureList_5.html" title="查看更多+" class="more">查看更多+</a> -->
+					</div>
+				</div>
+				<div id="colee_left" style="">
+					<table cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td id="colee_left1" valign="top" align="center">
+								<table cellpadding="2" cellspacing="0" border="0">
+									<tr align="center">
+										<volist name="hzqy" id="hzqy">
+											<td>
+												<a href="{$hzqy.linkurl}">
+													<p><img src="http://www.hdgg1998.com/{$hzqy.imageurl}" /></p>
+												</a>
+											</td>
+										</volist>
+									</tr>
+								</table>
+							</td>
+							<td id="colee_left2" valign="top">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!--产品展示 s-->
+		<div class="floor_1">
+			<div class="bt mm">
+				<div class="title_h3">
+					<h3><a href="http://www.hdgg1998.com/PictureList_5.html">恒达钢结构——产品展示</a></h3>
+					<span style="font-size:16px;"><i>20</i>年品质坚守，专业专注品牌建设与产品质量</span>
+					<a href="http://www.hdgg1998.com/PictureList_5.html" title="查看更多+" class="more">查看更多+</a>
+				</div>
+			</div>
+			<div class="prolist container clearfix">
+				<div class="pro-left">
+					<div class="ny_left">
+						<div class="ny_list">
+							<div class="list_title">
+
+							</div>
+							<div class="list_nr">
+								<img src="http://www.hdgg1998.com/public/home/images/i_lc_pic1.jpg" width="100%">
+								<h3>
+								<a href="http://www.hdgg1998.com/PictureList_5.html">恒达钢结构</a>
+							</h3>
+								<ul>
+									<volist name="cp_lanmu" id="cp_lanmu">
+										<li>
+											<a href="http://www.hdgg1998.com/PictureList_{$cp_lanmu.id}.html" class="list_item">{$cp_lanmu.title}</a>
+										</li>
+									</volist>
+								</ul>
+							</div>
+							<div class="list_lx">
+								<span>全国服务热线</span>
+								<p>0354-5322688</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="line-middle">
+					
+					<volist name="chanpin" id="chanpin">
+						<div class="xl12 xs6 xm4 xb4 ">
+					        <div class="media padding-bottom position_rel clearfix">
+					            <a href="http://www.hdgg1998.com/PictureShow_{$chanpin.id}.html">
+					                <img src="http://www.hdgg1998.com/{$chanpin.imageurl}" class="radius img-responsive">			            
+						            <div class="media-body">
+						                <strong>{$chanpin.title|msubstr=0,15}</strong>
+						            </div>
+						            <div class="info-mask"></div>
+					            </a> 
+					        </div>   
+					    </div>
+					</volist>	
+					
+				</div>
+			</div>
+			<div class="more_index">
+				<a href="http://www.hdgg1998.com/PictureList_5.html">查看更多</a>
+			</div>
+		</div>
+		<!--产品展示 e-->
+
+		<!--公司简介 s-->
+		<div class="zjqgh">
+			<div class="fixediv"><img src="http://www.hdgg1998.com/public/home/images/gsjj_bottom.png"></div>
+			<div class="zjqghs clearfix">
+				<div class="zjqghti"></div>
+				<div class="zjqghshow">
+					<div class="zjqghshowl">
+					<embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=b0528dqqcyd&auto=0" allowFullScreen="true" quality="high" width="436" height="306" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+						<!-- <video width="436" height="303" controls="controls" autoplay="autoplay">
+						  	<source src="http://www.hdgg1998.com/hengdaxuanchuan.flv" type="video/mp4" />
+						  	<source src="http://www.hdgg1998.com/hengdaxuanchuan.flv" type="video/ogg" />
+						  	<source src="http://www.hdgg1998.com/hengdaxuanchuan.flv" type="video/webm" />
+						  	<object data="http://www.hdgg1998.com/hengdaxuanchuan.flv" width="436" height="303">
+						    	<embed src="http://www.hdgg1998.com/hengdaxuanchuan.flv" width="436" height="303" />
+						  	</object>
+						</video> -->
+					</div>
+					<div class="zjqghshowr">
+						<div class="zjqghshowrt">
+							<div class="zw">产品专业化，生产规模化，突出专业，做强为主</div>
+							<div class="yw">PRODUCT SPECIALIZTION, PRODUCTION SCALE</div>
+							<div class="zjqghshowrs">
+								<p>
+									{$gongsi.content|msubstr=0,500}
+									<span class="ckqw">[<a href="http://www.hdgg1998.com/Danye_2.html"> 查看详情 </a>]</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="telcpfl">
+						<div class="telcpfll"><img src="http://www.hdgg1998.com/public/home/images/index_06.png"></div>
+						<div class="telcpflr">
+							<ul class="clearfix">
+								<li><img src="http://www.hdgg1998.com/public/home/images/index_07.png"></li>
+								<li><img src="http://www.hdgg1998.com/public/home/images/index_08.png"></li>
+								<li><img src="http://www.hdgg1998.com/public/home/images/index_09.png"></li>
+								<li><img src="http://www.hdgg1998.com/public/home/images/index_10.png"></li>
+								<li><img src="http://www.hdgg1998.com/public/home/images/index_11.png"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--公司简介 e-->
+
+		<!-- 工程案例 s -->
+		<div class="container">
+			<div class="bt mm">
+				<div class="title_h3">
+					<h3><a href="#">恒达钢结构 — 工程案例</a></h3>
+					<span>为每一位客户提供优良、卓越的产品和服务</span>
+					<a href="http://www.hdgg1998.com/PictureList_16.html" title="查看更多+" class="more">查看更多+</a>
+				</div>
+			</div>
+			<div id="colee_right">
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td id="colee_right1" valign="top" align="center">
+							<table cellpadding="2" cellspacing="0" border="0">
+								<tr align="center">
+									
+									<volist name="gcal" id="gcal">
+										<td>
+											<a href="http://www.hdgg1998.com/PictureShow_{$gcal.id}.html">
+												<div class="list">
+													<div class="img">
+														<img src="http://www.hdgg1998.com/{$gcal.imageurl}" />
+													</div>
+													<p>{$gcal.title}</p>
+												</div>
+											</a>
+										</td>
+									</volist>
+									
+								</tr>
+							</table>
+						</td>
+						<td id="colee_right2" valign="top">
+						</td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+
+		<div style="width:100%; height:129px; background:url(http://www.hdgg1998.com/public/home/images/i_gg1.jpg) no-repeat center top;">
+			<div class="i_gg"></div>
+		</div>
+
+		<!-- 工程案例 e -->
+
+		<!-- 优势 s -->
+		<div class="youshi_box">
+			<div class="i_ys_wrap">
+				<div class="i_ys_con">
+					<div class="i_ys_p1"><img src="http://www.hdgg1998.com/public/home/images/i_ys_p1.jpg"></div>
+					<div class="i_ys_p2"><img src="http://www.hdgg1998.com/public/home/images/i_ys_p2.jpg"></div>
+					<div class="i_ys_p3"><img src="http://www.hdgg1998.com/public/home/images/i_ys_p3.jpg"></div>
+					<div class="i_ys_b" id="i_ys_b1">
+						<p class="yw">PRODUCT RESEARCH AND DEVELOPMENT CAPABILITY</p>
+						<h2>产品研究和开发能力</h2>
+						<span>
+						<p>强大的研发能力始终是恒达持续发展的源泉</p>
+						<p><br></p>
+						<p>公司斥巨资建成具有先进水平的研发中心和实验室</p>
+						<p><br></p>
+						<p style="margin-top:20px">致力于新产品的研究、开发和试验</p>
+					</span>
+					</div>
+					<div class="i_ys_b" id="i_ys_b2">
+						<p class="yw">MAHUFACTURING AND CUSTOMER SEVERICE CAPABILITIES</p>
+						<h2>生产制造和客户服务能力</h2>
+						<span>
+						<p><strong>先进的制造能力</strong></p>
+						<p>卓越的生产现场管理；一流的生产设备；先进的生产技术；高素质的生产团队；IS09001质量认证体系；专业的现场加工服务。</p>
+						
+						<p><strong>卓越企业生产管理模式</strong></p>
+						<p>行业内倒入新型生产管理，打造景观工厂；零化危险要因，打造零伤害管理体制；培养设备专家级操作、保全人员；标准化生产服务流程；全面进入国际准6S生产管理阶段。</p>
+						
+						<p><strong>高效的客户服务能力</strong></p>
+						<p>便捷的一体化服务模式；高效快捷的交货期；安全的货物运输保障；高品质的产品包装服务。</p>
+					</span>
+					</div>
+					<div class="i_ys_b" id="i_ys_b3">
+						<p class="yw">TECHINICAL SUPPORT AND PROJECT MANAGEMENT SKILLS</p>
+						<h2>技术支持和项目管理能力</h2>
+						<p class="ms">恒达拥有一直高素质的专业技术队伍和项目管理队伍从项目初审到项目设计、项目管理；我们始终有专业的技术人员在您身边为你提供最佳的建筑解决方案</p>
+						<span>
+						<p><strong>方案设计和技术指导</strong></p>
+						<p>项目咨询建议方案；个性化的设计方案；荷载及结构计算书；施工安装图；细节处理设计</p>
+						<p><strong>专业的项目管理</strong></p>
+						<p>全面项目管理；施工现场协调；安装指导；安装质量控制；现场安全监督；售后跟踪服务</p>
+					</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 优势 e -->
+
+		<!-- 广告 -->
+		<div class="banner3_box">
+
+			<div class="banner3">
+
+				<div class="banner3_phone">山西恒达钢结构咨询热线：<br><span>186-49343777</span><br><span>184-04986666</span></div>
+
+				<div class="banner3_anniu">
+					<a href="http://www.hdgg1998.com/Danye_22.html">点击查看更多联系方式</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- 生产设备 s-->
+		<div class="tuwen container">
+			<div class="bt mm">
+				<div class="title_h3">
+					<h3><a href="#">生产设备 、 恒达风貌</a></h3>
+					<span style="font-size:15px;"><i>恒</i>远久长&nbsp;&nbsp;<i>达</i>诚申信&nbsp;&nbsp;新型建筑材料的倡导者！</span>
+					<a class="more"><i style="font-size:17px; font-style:normal;">20</i>年品质坚守</a>
+				</div>
+			</div>
+			<div class="tab" data-toggle="hover">
+				<div class="tab-head">
+					<ul class="tab-nav">
+						<li class="active">
+							<a>生产设备</a>
+						</li>
+						<li>
+							<a>恒达风貌</a>
+						</li>
+						<!-- <li><a href="#">抢险救灾</a> </li> -->
+					</ul>
+				</div>
+				<div class="tab-body tab-body-bordered">
+					<div class="tab-panel1 active">
+						<div class="mr_frbox">
+							<div class="mr_frBtnL prev"><span class="icon-chevron-left"></span></div>
+							<div class="mr_frUl">
+								<div class="tempWrap">
+									<ul>
+
+										<volist name="yfbm" id="yfbm">		
+											<li>
+							                   	<a href="http://www.hdgg1998.com/PictureShow_{$yfbm.id}.html">
+							                     	<img src="http://www.hdgg1998.com/{$yfbm.imageurl}">
+							                 		<p>{$yfbm.title|msubstr=0,36}</p>
+							                 	</a>
+							               	</li>
+							            </volist>   	         
+										
+									</ul>
+								</div>
+							</div>
+							<div class="mr_frBtnL next"><span class="icon-chevron-right"></span></div>
+						</div>
+					</div>
+					<div class="tab-panel1" style="display:none;">
+						<div class="mr_frbox">
+							<div class="mr_frBtnL prev"><span class="icon-chevron-left"></span></div>
+							<div class="mr_frUl">
+								<div class="tempWrap">
+									<ul>
+										<volist name="cjzs" id="cjzs">		
+											<li>
+							                   	<a href="http://www.hdgg1998.com/PictureShow_{$cjzs.id}.html">
+							                     	<img src="http://www.hdgg1998.com/{$cjzs.imageurl}">
+							                 		<p>{$cjzs.title|msubstr=0,36}</p>
+							                 	</a>
+							               	</li>
+							            </volist>   
+									</ul>
+								</div>
+							</div>
+							<div class="mr_frBtnL next"><span class="icon-chevron-right"></span></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- 生产设备  e -->
+
+		<!--新闻 s -->
+		<div class="floor_4">
+			<div class="bt mm">
+				<div class="title_h3">
+					<h3><a href="#">恒达钢结构 — 新闻资讯</a></h3>
+					<span><i>恒</i>讲久，久当思变&nbsp;&nbsp;<i>达</i>为信，信则久长</span>
+					<a href="http://www.hdgg1998.com/NewList_18.html" title="查看更多+" class="more">查看更多+</a>
+				</div>
+			</div>
+			<div class="g-zh container">
+				<div class="zh-l plug">
+					<h4>
+			        <span class="nobor">
+			            <a href="http://www.hdgg1998.com/NewList_19.html" class="jsz cur">企业动态</a>/ 
+			            <a href="http://www.hdgg1998.com/NewList_20.html" class="hyz">行业新闻</a>
+			        </span>
+			        <em><a href="http://www.hdgg1998.com/NewList_18.html" >+more</a></em>
+			    </h4>
+					<div class="newslist">
+						<div class="lfr tabCat">
+							<dl>
+								<dt>
+	        					<a href="http://www.hdgg1998.com/NewShow_{$gs_info.id}.html">
+	        						<img src="http://www.hdgg1998.com/public/home/images/new1.jpg">
+	        					</a>
+	        				</dt>
+								<dd>
+									<b><a href="http://www.hdgg1998.com/NewShow_{$gs_info.id}.html">{$gs_info.title|msubstr=0,30}</a></b>
+									<span>{$gs_info.content|msubstr=0,68}</span>
+									<span>{$gs_info.dateandtime}</span>
+								</dd>
+							</dl>
+							<ul>
+								<volist name="gs_news" id="gs_news">
+			                        <li>
+			                        	<a href="http://www.hdgg1998.com/NewShow_{$gs_news.id}.html"><em>{$gs_news.dateandtime}</em>{$gs_news.title|msubstr=0,30}</a>
+			                		</li>
+		                        </volist>
+							</ul>
+						</div>
+						<div class="lfr tabCat" style="display:none;">
+							<dl>
+								<dt>
+		            			<a href="http://www.hdgg1998.com/NewShow_{$hy_info.id}.html" >
+		                			<img src="http://www.hdgg1998.com/public/home/images/new2.jpg">
+		                		</a>
+		                	</dt>
+								<dd>
+									<b><a href="http://www.hdgg1998.com/NewShow_{$hy_info.id}.html">{$hy_info.title|msubstr=0,30}</a></b>
+									<span>{$hy_info.content|msubstr=0,75}</span>
+									<span>{$hy_info.dateandtime}</span>
+								</dd>
+							</dl>
+							<ul>
+								<volist name="hy_news" id="hy_news">
+		                        	<li><a href="http://www.hdgg1998.com/NewShow_{$gs_news.id}.html"><em>{$hy_news.dateandtime}</em>{$hy_news.title|msubstr=0,30}</a></li>
+		                        </volist>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="zh-r">
+					<h4>
+			        <span><a class="cj cur" href="http://www.hdgg1998.com/NewList_21.html">技术支持</a> </span>
+			        <em><a href="http://www.hdgg1998.com/NewList_18.html">+more</a></em>
+			    </h4>
+					<div class="sq">
+						<ul>
+							
+							<volist name="js_news" id="js_news">
+					            <li>
+								  	<div class="wen"><a href="http://www.hdgg1998.com/NewShow_{$js_news.id}.html">{$js_news.title|msubstr=0,15}</a> </div>
+								  	<div class="da"> 
+										{$js_news.content|msubstr=0,80}
+									</div>
+								</li>
+					        </volist>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--新闻 e -->
+
+		<!-- 友情链接 s -->
+		<div class="links ">
+			<div class="links_con clearfix">
+				<span>友情链接：</span>
+				<div class="link_a">
+					<volist name="friendlink" id="friendlink">
+	                	<a href="{$friendlink.linkurl}" target="_blank">{$friendlink.title}</a> |                   
+	                </volist>
+				</div>
+			</div>
+		</div>
+		<!-- 友情链接 e -->
+		<!-- 底部 s-->
+		<!-- 底部 s-->
+		<include file="Public/footer" />
+		<!-- 代码 结束 -->
+		<script type="text/javascript">
+			//置顶图标显示
+
+			//合作伙伴  使用div时，请保证colee_left2与colee_left1是在同一行上.
+			var speed = 40 //速度数值越大速度越慢
+			var colee_left2 = document.getElementById("colee_left2");
+			var colee_left1 = document.getElementById("colee_left1");
+			var colee_left = document.getElementById("colee_left");
+			colee_left2.innerHTML = colee_left1.innerHTML
+
+			function Marquee3() {
+				if(colee_left2.offsetWidth - colee_left.scrollLeft <= 0) //offsetWidth 是对象的可见宽度
+					colee_left.scrollLeft -= colee_left1.offsetWidth //scrollWidth 是对象的实际内容的宽，不包边线宽度
+				else {
+					colee_left.scrollLeft++
+				}
+			}
+			var MyMar3 = setInterval(Marquee3, speed)
+			colee_left.onmouseover = function() {
+				clearInterval(MyMar3)
+			}
+			colee_left.onmouseout = function() {
+				MyMar3 = setInterval(Marquee3, speed)
+			}
+
+			//工程案例  使用div时，请保证colee_left2与colee_left1是在同一行上.
+			var speed = 40 //速度数值越大速度越慢
+			var colee_right2 = document.getElementById("colee_right2");
+			var colee_right1 = document.getElementById("colee_right1");
+			var colee_right = document.getElementById("colee_right");
+			colee_right2.innerHTML = colee_right1.innerHTML
+
+			function Marquee4() {
+				if(colee_right2.offsetWidth - colee_right.scrollLeft <= 0) //offsetWidth 是对象的可见宽度
+					colee_right.scrollLeft -= colee_right1.offsetWidth //scrollWidth 是对象的实际内容的宽，不包边线宽度
+				else {
+					colee_right.scrollLeft++
+				}
+			}
+			var MyMar4 = setInterval(Marquee4, speed)
+			colee_right.onmouseover = function() {
+				clearInterval(MyMar4)
+			}
+			colee_right.onmouseout = function() {
+				MyMar4 = setInterval(Marquee4, speed)
+			}
+		</script>
+
+	</body>
+	<script src="http://www.hdgg1998.com/public/home/js/lpk.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

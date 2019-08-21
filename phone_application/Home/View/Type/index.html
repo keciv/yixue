@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/lb/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/css/index.css" />
+	<script src="__ROOT__/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(function(){
+				var page=1;  
+		        var finished=0;  
+		        var sover=0;  
+		        <!----------------产品加载更多-------------------------->  
+		        //如果屏幕未到整屏自动加载下一页补满  
+		        var setdefult=setInterval(function (){  
+		            if(sover==1)  
+		                clearInterval(setdefult);     
+		            else if($(".right_main_main").height()<$(window).height()/2)  
+		                loadmore($(window));  
+		            else  
+		                clearInterval(setdefult);  
+		        },50);  
+		        //加载完  
+		        function loadover(){  
+		            if(sover==1)  
+		            {     
+		                var overtext="Duang～到底了";  
+		                $(".loadmore").remove();  
+		                if($(".loadover").length>0)  
+		                {  
+		                  $(".loadover span").eq(0).html(overtext);  
+		                }  
+		                else  
+		                {  
+		                    var txt='<div class="loadover"><span>'+overtext+'</span></div>'  
+		                    $("#wrapper").append(txt);  
+		                }  
+		            }  
+		          }  
+        //加载更多  
+        var vid=0;  
+        var paginalNum =5;
+		var tname=$("#type_name").val();
+		$(".right_main >h3").html(tname);
+		// alert(id);
+        // var ID="{$parentID}";
+        // alert(ID);
+        function loadmore(obj){ 
+        	var id=$("#parentID").val();
+        	var tid=$("#tid").val();
+        	if(tid==null){
+        		tid=0;
+        	}
+        		if(finished==0 && sover==0)  
+	            {  
+	                var scrollTop = $(obj).scrollTop();  
+	                var scrollHeight = $(document).height();  
+	              var windowHeight = $(obj).height();  
+	                if($(".loadmore").length==0)  
+	              {  
+	                    var txt='<div class="loadmore"><span class="loading"></span>加载中..</div>'  
+	                  $(".right_main_main").append(txt);  
+	                }  
+	              if ((scrollTop + windowHeight -scrollHeight)<=50 ) {  
+	                    //此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作  
+	                    //防止未加载完再次执行  
+	                    finished=1;  
+	                    var result = "";  
+	                    	$.ajax({
+	                    url:'__APP__/GetData/index',
+	                      data:{id:id,page:page,paginalNum:paginalNum},
+	                      type:'post',
+	                      dataType:'json',
+	                      success:function(data){
+	                      	// console.log(data);
+	                        if(data.length>0){
+		                        //防止未加载完再次执行  
+		                        for(var i = 0; i < data.length; i++){  
+		                            // vid++; 
+		                            if(data[i].id==tid){
+		                            	result+= '<p class="p_bgcolor" data-id="'+data[i].id+'">'+data[i].type_name+'</p>';
+		                            } else{
+		                            	result+= '<p data-id="'+data[i].id+'">'+data[i].type_name+'</p>';
+		                            }
+		                     		
+		                          }  
+		                            $('.right_main_main').empty().append(result);  
+		                            page+=1;
+		                            finished=0; 
+		                     }else{
+		                        sover=1;  
+		                        loadover();
+			                     }
+			                   }
+			                })
+	                      
+	              }  
+          		}  
+        
+            
+      }
+
+      $("li").click(function(){
+      	$(".right_main_main").empty();
+      	 var id=$(this).data("id");
+      	 var name=$(this).html();
+      	 $(".right_main >h3").html(name);
+      	 $("#parentID").val(id);
+      	 loadmore();
+      })
+      //页面滚动执行事件  
+      $(window).scroll(function (){  
+          loadmore($(this));  
+      }); 
+			// }
+		})
+    </script>
+</head>
+
+<body style="background: #f5f5f5;">
+	<div class="head clearfix">
+		<div class="fl left">
+			<a class="glyphicon glyphicon-chevron-left" href="__APP__/MeInfo.html"></a>
+		</div>
+		<div class="fl center">
+			选择您的专业
+		</div>
+	</div>
+	<div type="text/css" style="height: 5rem;"></div>
+	<div class="classification clearfix">
+		<div class="fl left">
+			<ul>
+				<input type="hidden" value="{$parentID}" id="parentID" name="">
+				<input type="hidden" value="{$tid}" id="tid" name="">
+				<volist name="types" id="type">
+					<if condition="$type.id eq $parentID">
+						<li  class="leftbg" data-id="{$type.id}">{$type.type_name}</li>
+					<else />
+						<li  data-id="{$type.id}">{$type.type_name}</li>
+					</if>
+				</volist>
+			</ul>
+		</div>
+		<div class="fr right" id="height">
+			<div class="right_main" style="display: block;">
+				<input type="hidden" name="" id="type_name" value="{$type_name}">
+				<h3></h3>
+				<div class="right_main_main">
+					<if condition="$parentID eq 0">
+						<p class="p_bgcolor">{$type_name}</p>
+					</if>
+				</div>
+			</div>
+			<!-- <div class="right_main" >
+				<h3>药师</h3>
+				<div class="right_main_main">
+					<p>执业西药师</p>
+					<p>执业中药师</p>
+					<p>营养课程</p>
+					<p>药店管理</p>
+				</div>
+			</div>
+			<div class="right_main" >
+				<h3>医师</h3>
+				<div class="right_main_main">
+					<p>临床执业医师</p>
+					<p>乡村全科助理医师</p>
+					<p>口腔助理医师</p>
+					<p>中西医助理医师</p>
+					<p>中医助理医师</p>
+					<p>临床助理医师</p>
+					<p>口腔执业医师</p>
+					<p>中西医执业医师</p>
+					<p>中医执业医师</p>
+					<p>中医专长</p>
+				</div>
+			</div>
+			<div class="right_main" >
+				<h3>医辽事业编</h3>
+				<div class="right_main_main">
+					<p>解剖学</p>
+					<p>药理学</p>
+					<p>生理学</p>
+					<p>病理学</p>
+				</div>
+			</div>
+			<div class="right_main" >
+				<h3>卫生职称</h3>
+				<div class="right_main_main">
+					<p>102初级中荮士</p>
+					<p>367主管中药师</p>
+					<p>361-362疾病控制主治医师</p>
+					<p>201初级药师</p>
+					<p>366主管药师</p>
+					<p>303-39内科学(中级)</p>
+				</div>
+			</div>
+			<div class="right_main" >
+				<h3>住院医师</h3>
+				
+			</div>
+			<div class="right_main" >
+				<h3>医学考研</h3>
+				<div class="right_main_main">
+					<p>西医考研</p>
+				</div>
+			</div> -->
+
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		var lpk=window.screen.height;
+		$('#height').height(lpk-50);
+		$('.classification .left>ul li').click(function(){
+			$(this).addClass('leftbg').siblings().removeClass('leftbg')
+			$('#height>div').eq($(this).index()).show().siblings().hide()
+		})
+		// console.log($('.fr .right_main .right_main_main p').click(function(){console.log($(".right_main_main p").html())}));
+		
+		$("body").on("click",".fr .right_main .right_main_main p",function(){
+			// $(this).addClass('p_bgcolor').parent().parent().siblings().children().children().removeClass('p_bgcolor');
+			$(this).addClass('p_bgcolor').siblings().removeClass('p_bgcolor');
+			var p_text=$(this).data("id");  //当前点击的内容
+			$.ajax({
+				url:'__APP__/Type/type_add',
+				type:"post",
+				data:{specialty:p_text},
+				success:function(data){
+					if(data=='ok'){
+						location.href="__APP__/MeInfo/index";
+					}
+				}
+			})
+		});
+
+		// $('.fr .right_main .right_main_main p').click(function(){
+		// 	alert(1);
+		// 	$(this).addClass('p_bgcolor').parent().parent().siblings().children().children('p').removeClass('p_bgcolor');
+		//     $(this).addClass('p_bgcolor').siblings().removeClass('p_bgcolor');
+		//    var p_text=$(this).text();  //当前点击的内容
+		// })
+	});
+</script>
+	
+
+</html>

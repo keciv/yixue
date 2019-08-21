@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>ti</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/lb/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/css/index.css" />
+	</head>
+
+	<body style="background: white;">
+		<header class="clearfix" style="z-index: 1000;">
+			<div class="fl left">
+				<a href="__APP__/Me.html"> <span class="glyphicon glyphicon-menu-left"></span></a>
+			</div>
+			<div class="fl center">
+				我的课程
+			</div>
+			<div class="fr right">
+				<a href="__APP__/Kebiao.html">课表</a>
+			</div>
+		</header>
+		<div type="text/css" style="height: 10.2rem;"></div>
+		<div class="ck_togg clearfix">
+			<div class="fl">
+				<a href="javascript:;" class="ck_toggcolor">免费课程</a>
+			</div>
+			<div class="fl">
+				<a href="javascript:;">付费课程</a>
+			</div>
+		</div>
+		<div class="ck_togg_main">
+			<ul class="" style="display: block;">
+				<volist name="info" id="vo">
+					<li class="clearfix" onclick="var id = "{$vo.id}";location.href='{:U('/Video?id="+id+"')}'">
+						<div class="fl left">
+							<img src="__ROOT__/public/home/img/m1.png" />
+						</div>
+						<div class="fr right">
+							<h3>{$vo.class_title}</h3>
+							<!-- <p>3天前</p> -->
+						</div>
+					</li>
+				</volist>
+			</ul>
+			<ul class="" style="text-align: center;" id="my-fulist">
+				<img src="__ROOT__/public/home/img/cknull.png" />
+			</ul>
+		</div>
+	</body>
+	<script src="__ROOT__/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('.ck_togg div a').click(function(){
+			$(this).addClass('ck_toggcolor').parent().siblings().children().removeClass('ck_toggcolor')
+			var index=$('.ck_togg div a').index(this);
+			$('.ck_togg_main>ul').eq(index).show().siblings().hide()
+		})
+	</script>
+	<script>
+		$(function(){
+			$.ajax({
+				type:"get",
+				url:"{:U('myClass/fufei_class')}",
+				success:function(data){
+					var html='';
+					data.forEach(item => {
+		    			html += `
+		    				<li class="clearfix">
+								<div class="fl left">
+									<img src="__ROOT__/public/home/img/m1.png" />
+								</div>
+								<div class="fr right">
+									<h3>${item.class_title}</h3>
+								</div>
+							</li>
+		    			`;
+		    		});
+		    		$("#my-fulist").empty().html(html);
+				}
+			});
+		})
+	</script>
+
+</html>

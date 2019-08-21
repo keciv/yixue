@@ -1,0 +1,32 @@
+﻿<div class="left-menu">
+        <div class="ny_left">
+          <div class="ny_list">
+            <div class="list_title1" style="padding: 15px 0 20px;text-align: center;">
+              <img src="__ROOT__/public/home/images/logo1.png" width="80%" />
+            </div>
+            <div class="list_nr">
+              <img src="__ROOT__/public/home/images/i_lc_pic1.jpg" width="100%">
+              <h3>
+                <a href="index.html">{$M_lanmu.title}</a>
+              </h3>
+              <ul>
+
+                <volist name="lanmu.ChildrenLanmu" id="erji">
+                  <if condition="$erji['id'] eq 1">
+                    <li><a href="__APP__/Danye_2.html" class="list_item">{$erji.title}</a></li>
+                  <else/>
+                    <li><a href="__APP__/{$erji.controller}_{$erji.id}.html" class="list_item">{$erji.title}</a></li>
+                  </if>
+                </volist>    
+                
+              </ul>
+            </div>
+            <div class="list_lx">
+              <span>全国服务热线</span>
+              <p>0354-5322688</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        

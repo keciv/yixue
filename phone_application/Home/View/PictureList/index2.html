@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>{$lanmuNow.title}_石家庄中医医院</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/lb/css/bootstrap.css" />
+	</head>
+
+	<body>
+
+		<include file="Public/headers" />
+		
+		<if condition="$parentID eq 10 OR $parentID eq 12 OR $parentID eq 13">
+		<!-- 图文 -->
+		<div class="lpk_main" id="wrapper">
+			<div class="lpk_tuwen clearfix prolist">
+
+				
+				<!-- <div class="fl">
+					<a href="info.html" class="clearfix">
+						<div class="fl left">
+							<img src="img/tuwen2.gif" />
+						</div>
+						<div class="fr right">
+							<h3>同仁牛黄清心丸</h3>
+							<p>益气养血，镇静安神，化痰熄风血不足，痰热上扰引起：胸中郁热，惊悸虚烦，头目眩晕</p>
+							<h4>详情&gt;&gt;</h4>
+						</div>
+					</a>
+				</div> -->
+				
+			</div>
+		</div>
+		<!-- 图文 -->
+		<elseif condition="$parentID eq 3" />
+		<!-- 荣誉 -->
+		<div class="lpk_main" id="wrapper">
+			<div class="ry clearfix prolist">
+				
+				<!-- <div class="fl">
+					<a href="" class="">
+						<div class="le">
+							<img src="img/tuwen2.gif" />
+						</div>
+						<div class="ri">
+							<h3>同仁牛黄清心丸</h3>
+						</div>
+					</a>
+				</div> -->
+				
+			</div>
+		</div>
+		<!-- 荣誉 -->
+		<elseif condition="$parentID eq 6 OR $parentID eq 7 OR $parentID eq 8" />
+		<!-- 教师 -->
+		<div class="lpk_main" style="padding-bottom: 60px;">
+			<div class="lpk_teacher" id="wrapper">
+				<ul class="prolist">
+					
+					<!-- <li>
+						<a href="javascript:;">
+							<div class="top parent">
+								<img src="img/logo2.png" />
+							</div>
+							<div class="bottom clearfix">
+								<div class="fl left">
+									<img src="img/zj1.png" />
+								</div>
+								<div class="fl center">
+									<h3>王老师</h3>
+									<div class="h">
+										<p>科室：牙科</p>
+										<p class="height">专长：熟练诊治肺炎、肠炎等儿科常见病，尤其擅长诊治儿科心血管疾病，如心肌炎、心肌病、心内膜弹力纤…</p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li> -->
+					
+				</ul>
+			</div>
+		</div>
+		<!-- 教师 -->
+		</if>
+		
+
+		<include file="Public/footers" />
+
+	</body>
+	<script src="__ROOT__/public/phone/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/public/phone/js/picMove.js"></script>
+	<script src="__ROOT__/public/phone/js/screen.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var bodyheight = document.documentElement.clientHeight;
+	$('body').height(bodyheight);
+
+	$('.nav1 > ul > li').mouseover(function() {
+		$('.nav1 > ul > li>a').eq($(this).index()).addClass('on');
+	});
+	$('.nav1 > ul > li').mouseleave(function() {
+		$('.nav1 > ul > li>a').eq($(this).index()).removeClass('on');
+	});
+</script>
+	<script type="text/javascript">
+
+      var page=1;  
+      var finished=0;  
+      var sover=0;  
+      <!----------------产品加载更多-------------------------->  
+      //如果屏幕未到整屏自动加载下一页补满  
+      var setdefult=setInterval(function (){  
+          if(sover==1)  
+              clearInterval(setdefult);     
+          else if($(".prolist").height()<$(window).height()/2)  
+              loadmore($(window));  
+          else  
+              clearInterval(setdefult);  
+      },50);  
+      //加载完  
+      function loadover(){  
+          if(sover==1)  
+          {     
+              var overtext="Duang～到底了";  
+              $(".loadmore").remove();  
+              if($(".loadover").length>0)  
+              {  
+                  $(".loadover span").eq(0).html(overtext);  
+              }  
+              else  
+              {  
+                  var txt='<div class="loadover"><span>'+overtext+'</span></div>'  
+                  $("#wrapper").append(txt);  
+              }  
+          }  
+      }  
+      //加载更多  
+      var vid=0;
+      var paginalNum =9;
+      var ID="{$parentID}";
+      // alert(ID);
+      function loadmore(obj){  
+          if(finished==0 && sover==0)  
+          {  
+              var scrollTop = $(obj).scrollTop();  
+              var scrollHeight = $(document).height();  
+              var windowHeight = $(obj).height();  
+              if($(".loadmore").length==0)  
+              {  
+                  var txt='<div class="loadmore"><span class="loading"></span>加载中..</div>'  
+                  $("#wrapper").append(txt);  
+              }  
+              if (scrollTop + windowHeight -scrollHeight<=50 ) {  
+                  //此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作  
+                  //防止未加载完再次执行  
+                  finished=1;  
+                  var result = "";  
+                  
+                  $.ajax({
+                    url:'__APP__/GetData/index',
+                    data:{id:ID,page:page,paginalNum:paginalNum},
+                    type:'post',
+                    dataType:'json',
+                    success:function(data){ 
+                      /*console.log(data);*/
+                    if(data.length>0){
+                        //防止未加载完再次执行  
+                        for(var i = 0; i < data.length; i++){  
+                            vid++; 
+                       	var parentID="{$parentID}";     	
+	                   	if(parentID==3){
+	                   		result+= 
+			                    '<div class="fl">'+
+									'<a href="__APP__/PictureShow_' + data[i].id + '.html">'+
+										'<div class="le">'+
+											'<img src="__ROOT__/' + data[i].imageurl + '" />'+
+										'</div>'+
+										'<div class="ri">'+
+											'<h3>' + data[i].title + '</h3>'+
+										'</div>'+
+									'</a>'+
+								'</div>'
+
+	                   	}
+
+	                   	if(parentID==6 || parentID==7 || parentID==8){
+	                   		result+= 
+			                '<li>'+
+								'<a href="__APP__/PictureShow_' + data[i].id + '.html">'+
+									'<div class="top parent">'+
+										'<img src="__ROOT__/public/home/img/logo2.png" />'+
+									'</div>'+
+									'<div class="bottom clearfix">'+
+										'<div class="fl left">'+
+											'<img src="__ROOT__/' + data[i].imageurl + '" />'+
+										'</div>'+
+										'<div class="fl center">'+
+											'<h3>' + data[i].title + '</h3>'+
+											'<div class="h">'+
+												'<p>科室：' + data[i].keshi + '</p>'+
+												'<p>职称：' + data[i].zhicheng + '</p>'+
+												'<p class="height">专长：' + data[i].zhuanchang + '</p>'+
+											'</div>'+
+										'</div>'+
+									'</div>'+
+								'</a>'+
+							'</li>'
+	                   	}
+	                   	if(parentID==10 || parentID == 12 || parentID == 13){
+	                   		result+=
+	                   		'<div class="fl">'+
+								'<a href="__APP__/PictureShow_' + data[i].id + '.html" class="clearfix">'+
+									'<div class="fl left">'+
+										'<img src="__ROOT__/' + data[i].imageurl + '" />'+
+									'</div>'+
+									'<div class="fr right">'+
+										'<h3>' + data[i].title + '</h3>'+
+										'<p>' + data[i].content + '</p>'+
+										'<h4><span class="fl">发布时间：' + data[i].dateandtime + '</span><span class="fr">详情></span></h4>'+
+									'</div>'+
+								'</a>'+
+							'</div>'
+
+	                   	}         	
+                
+                    }  
+                          $('.prolist').append(result);  
+                            page+=1; 
+                            finished=0; 
+                     }else{
+                        sover=1;  
+                        loadover();
+                     }
+                   }
+                })  
+              }  
+          }  
+      }  
+      //页面滚动执行事件  
+      $(window).scroll(function (){  
+          loadmore($(this));  
+      });  
+    </script> 
+</html>

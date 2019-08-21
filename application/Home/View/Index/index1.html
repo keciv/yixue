@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>{$webInfo.title}</title>
+		<meta name="keywords" content="{$webInfo.keywords}">
+		<meta name="description" content="{$webInfo.description}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="__ROOT__/public/home/css/pintuer.css">
+		<script src="__ROOT__/public/home/js/jquery.js"></script>
+		<script type="text/javascript" src="__ROOT__/public/home/js/jquery.kxbdMarquee.js"></script>
+		<script src="__ROOT__/public/home/js/pintuer.js"></script>
+		<script src="__ROOT__/public/home/js/index.js"></script>
+		<script type="text/javascript" src="__ROOT__/public/home/js/jquery.SuperSlide2.js"></script>
+		<link rel="stylesheet" href="__ROOT__/public/home/css/css.css">
+		<link rel="stylesheet" href="__ROOT__/public/home/css/index.css">
+
+		<script src="__ROOT__/public/home/js/respond.js"></script>
+	</head>
+
+	<body>
+	<!-- 公共头部包含 -->
+	  <include file="Public/header" />
+	<!-- 公共头部包含end -->
+
+		<!--公司简介 s-->
+		<div class="floor_2">
+			<!-- <div class="bt mm">
+  			<h1>公司简介</h1>
+  			<h2>以工匠精神做产品，以生产管理做企业 • <span><sup>CRAFTSMAN SPIRIT, PRODUCTION MANAGEMENT</sup></span></h2>
+		</div> -->
+			<div class="container">
+				<div class="about_index  clearfix">
+					<div class="xs6 xm4 xb5"><img src="__ROOT__/public/home/images/gsjj.jpg"></div>
+					<div class="xs6 xm4 xb7">
+						<div class="m_about_txt">
+							<div class="m_about_ht_yw">ABOUT US</div>
+							<div class="m_about_ht">山西洪波制泵有限公司</div>
+							<div class="line"></div>
+							{$gongsi.content}
+							<a href="__APP__/Danye_2.html">
+								<div class="cpz_more about_more">查看更多</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="rongyu clearfix">
+					<div class="img">
+						<a href="#"><img src="__ROOT__/public/home/images/gs-img.png"></a>
+					</div>
+					<div class="tuwen">
+						<div id="marquee1">
+							<ul>
+								<volist name="zzry" id="zzry">
+									<li>
+										<a href="__APP__/PictureShow_{$zzry.id}.html"><img src="__ROOT__/{$zzry.imageurl}"></a>
+									</li>
+								</volist>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--公司简介 e-->
+
+		<div class="g-gg1">
+			<div class="cmain_con clearfix">
+				<div class="cys_num cys_one fl">
+					<h6>专业泵生产厂家</h6>
+					<h2><span>上善若水</span></h2>
+					<h2><span style="font-size:40px;">水善利万物而不争</span> </h2>
+					<p>本公司根据客户需求，随时设计、制造、供货</p>
+				</div>
+				<div class="cys_num cys_two fl">
+					<h6>销售网络</h6>
+					<h2>畅销全国</h2>
+					<h2>远销国外</h2>
+					<p>公司产品远销中东、东南亚、南非；畅销全中国，被各行各业广泛采用</p>
+				</div>
+				<div class="cys_num cys_three fr">
+					<h6>质量认证</h6>
+					<h2><span>ISO9001</span></h2>
+					<h3>国际质量体系认证</h3>
+					<p>每一台泵在销售前都要经过严格的质量检测</p>
+				</div>
+			</div>
+		</div>
+
+		<!--产品展示 s-->
+		<div class="floor_1">
+			<div class="bt mm">
+				<h1>产品中心</h1>
+				<h2>品质源于专业  专业造就品牌 • <span><sup>QUALITY COMES FROM PROFESSIONAL EXPERTISE TO BUILD A BRAND</sup></span></h2>
+			</div>
+			<div class="prolist container clearfix">
+				<div class="pro-left">
+					<div class="ny_left">
+						<div class="ny_list">
+							<div class="list_title">
+								<span>洪波产品分类</span>
+								<p>P</p>
+								<font>roduct Categories</font>
+							</div>
+							<div class="list_nr">
+							<h3>
+								<a href="#">潜水电泵</a>
+							</h3>
+								<ul>
+									<volist name="cp_lanmu" id="cp_lanmu">
+										<li>
+											<a href="__APP__/PictureList_{$cp_lanmu.id}.html" class="list_item">{$cp_lanmu.title}</a>
+										</li>
+									</volist>
+
+								</ul>
+					
+							</div>
+							<div class="list_lx">
+								<span>全国服务热线</span>
+								<p>400-0354-788</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="line-middle">
+					
+				<volist name="chanpin" id="chanpin">
+					<div class="xl12 xs6 xm4 xb4 ">
+				        <div class="media padding-bottom position_rel clearfix">
+				            <a href="__APP__/PictureShow_{$chanpin.id}.html">
+				                <img src="__ROOT__/{$chanpin.imageurl}" class="radius img-responsive">			            
+					            <div class="media-body">
+					                <strong>{$chanpin.title|msubstr=0,15}</strong>
+					            </div>
+					            <div class="info-mask"></div>
+				            </a> 
+				        </div>   
+				    </div>
+				</volist>	
+
+				</div>
+			</div>
+			<div class="more_index">
+				<a href="__APP__/PictureList_13.html">查看更多</a>
+			</div>
+		</div>
+		<!--产品展示 e-->
+
+		<!-- 广告1 -->
+		<!-- <div class="g-gg">
+		<div class="gg container clearfix">
+			
+		</div>
+	</div> -->
+
+		<!-- 优势 s -->
+		<div class="floor_3">
+			<img src="__ROOT__/public/home/images/title_adv.jpg" width="100%">
+			<div class="container">
+				<div class="ys01">
+					<div class="ys content">
+						<dl>
+							<dt>
+							<em><img src="__ROOT__/public/home/images/ys_no1.png"></em> 
+							<h5>
+								<a>个性化<i>技术</i>设计中心</a><span>INDIVIDUALISTIC TOCHNICAL DESIGN CENTER</span> 
+							</h5>
+						</dt>
+							<dd>
+								<p>
+									<span class="fh">●</span> 国内一流的水泵技术设计中心，与多家科研机构、高等院校建立良好的技术合作，采用专业CFD设计系统。
+								</p>
+								<p>
+									<span class="fh">●</span> 始终围绕客户量身定做，尽一切可能地满足客户的差异化需求这就是我们极具个性的天波水系设计理念。
+								</p>
+								<p>
+									<span class="fh">●</span> 同行领跑者的风范，不但体现在我们对细节的入微处理，更表现在时刻坚持技术创新，始终走在行业技术的前端。
+								</p>
+								<p>
+									<span class="fh">●</span> 科技、环保是我们设计的又一重要理念，正因为如此，我们才能得到客户和社会的认同，也才有天波今日的辉煌。
+								</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="ys02">
+					<div class="ys content">
+						<dl>
+							<dt>
+							<em><img title="" alt="" src="__ROOT__/public/home/images/ys_no2.png"></em> 
+							<h5>
+								<a>标准化<i>产品</i>检测中心</a><span>FLOW-LINE PRODUCT MANUFACTURING CENTER</span> 
+							</h5>
+						</dt>
+							<dd>
+								<p>
+									<span class="fh">●</span> 天波对各种原材料及配件均按照统一的标准采购，以达到产品的零缺陷。因此，我们牢牢把握性价比的理念，从而最大的降低产品生命周期内的一切使用成本。
+								</p>
+								<p>
+									<span class="fh">●</span> 天波制泵拥有国内一流的水泵测试中心，经权威机构认定：达到国家级测试水平。测试中心做出的检验是以客户利益为宗旨对产品出厂以前进行最后检验。
+								</p>
+								<p>
+									<span class="fh">●</span> 质量是天波深受广大客户认同的重要因素，从产品设计、产品制造到成品检验，天波人始终以“提供高品质产品和服务”为市场承诺的核心。
+								</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="ys03">
+					<div class="ys content">
+						<dl>
+							<dt>
+							<em><img src="__ROOT__/public/home/images/ys_no3.png"></em> 
+							<h5>
+								<a>流程化<i>产品</i>制造中心</a><span>STREAMLINE PRODUCT MANUFACTURING CENTER</span> <b></b>
+							</h5>
+						</dt>
+							<dd>
+								<p>
+									<span class="fh">●</span> 由BROTHER数控机床等大型专业设备组成了专业的生产流水线；精良的生产设备是制造卓越产品的保障。
+								</p>
+								<p>
+									<span class="fh">●</span> 天波产品生产制造过程，尤其强调故业精神，小型一颗埋丝钉，均一丝不苟、尽显专业素质。
+								</p>
+								<p>
+									<span class="fh">●</span> 大量高素质的制造工程师，充分发挥其专业水准，对产品的设计精益求精，力求制造客户满意的产品。
+								</p>
+								<p>
+									<span class="fh">●</span> 企业严格实施IS09001质量管理体系。科学的管理保证生产高级运转。
+								</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 优势 e -->
+		<!-- <img src="__ROOT__/public/home/images/honorBG.png" width="100%"> -->
+		<!-- 广告2 -->
+		<div class="container" style="width:100%; padding:0;">
+			<div class="sev fw">
+				<h3>
+					<a>
+						<p>「洪波制泵」一站式潜水电泵规划服务</p>
+					</a>
+					<span>全国咨询热线<b>0354-5311777/5311888</b></span>
+				</h3>
+				<ul>
+					<div class="container">
+						<li>
+							<a>
+								<h4>厂家<br>直销</h4>
+								<span>厂家与用户对接，给予专业技术指导的同时提供最优惠的价格。</span>
+							</a>
+						</li>
+						<li>
+							<a>
+								<h4>按需<br>定做</h4>
+								<span>根据用户的需求进行设计生产，提供给用户朋友最适用的产品。</span>
+							</a>
+						</li>
+						<li>
+							<a>
+								<h4>设计<br>生产</h4>
+								<span>专业技术团队自主研发与生产，全力保障产品质量与供货周期。</span>
+							</a>
+						</li>
+						<li>
+							<a>
+								<h4>铸造<br>加工</h4>
+								<span>铸造、加工、装配、测试一条龙生产，保障产品材质与精加工。</span>
+							</a>
+						</li>
+						<li>
+							<a>
+								<h4>质量<br>三包</h4>
+								<span>在产品质保期内，因产品质量问题厂家实行包退、包换、包修。</span>
+							</a>
+						</li>
+						<li>
+							<a>
+								<h4>售后<br>保障</h4>
+								<span>国内售后24小时内到达维修现场，偏远地区72小时之内到达。</span>
+							</a>
+						</li>
+					</div>
+				</ul>
+
+			</div>
+		</div>
+
+		<!-- 合作伙伴 -->
+		<div id="Carousel" class="container">
+			<div class="bt mm">
+				<h1>合作企业</h1>
+			</div>
+			<div id="marquee2">
+				<ul>
+					<volist name="hzqy" id="hzqy">
+						<li>
+							<a href="{$hzqy.linkurl}"><img src="__ROOT__/{$hzqy.imageurl}"></a>
+						</li>
+					</volist>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 研发部门 s-->
+		<div class="tuwen container">
+			<div class="tab" data-toggle="hover">
+				<div class="tab-head">
+					<ul class="tab-nav">
+						<li class="active">
+							<a href="#">研发部门</a>
+						</li>
+						<li>
+							<a href="#">车间展示</a>
+						</li>
+					</ul>
+				</div>
+				<div class="tab-body tab-body-bordered">
+					<div class="tab-panel1 active">
+						<div class="mr_frbox">
+							<div class="mr_frBtnL prev"><span class="icon-chevron-left"></span></div>
+							<div class="mr_frUl">
+								<div class="tempWrap">
+									<ul>
+										
+										<volist name="yfbm" id="yfbm">		
+											<li>
+							                   	<a href="__APP__/PictureShow_{$yfbm.id}.html">
+							                     	<img src="__ROOT__/{$yfbm.imageurl}">
+							                 		<p>{$yfbm.title|msubstr=0,36}</p>
+							                 	</a>
+							               	</li>
+							            </volist>   	         
+										
+									</ul>
+								</div>
+							</div>
+							<div class="mr_frBtnL next"><span class="icon-chevron-right"></span></div>
+						</div>
+					</div>
+					<div class="tab-panel1" style="display:none;">
+						<div class="mr_frbox">
+							<div class="mr_frBtnL prev"><span class="icon-chevron-left"></span></div>
+							<div class="mr_frUl">
+								<div class="tempWrap">
+									<ul>
+										<volist name="cjzs" id="cjzs">		
+											<li>
+							                   	<a href="__APP__/PictureShow_{$cjzs.id}.html">
+							                     	<img src="__ROOT__/{$cjzs.imageurl}">
+							                 		<p>{$cjzs.title|msubstr=0,36}</p>
+							                 	</a>
+							               	</li>
+							            </volist>   
+									</ul>
+								</div>
+							</div>
+							<div class="mr_frBtnL next"><span class="icon-chevron-right"></span></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- 领导关怀  e -->
+
+		<!--新闻 s -->
+		<div class="floor_4">
+			<div class="bt mm">
+				<h1>新闻资讯</h1>
+				<h2>品质源于专业  专业造就品牌 • <span><sup>QUALITY COMES FROM PROFESSIONAL EXPERTISE TO BUILD A BRAND</sup></span></h2>
+			</div>
+			<div class="g-zh container">
+				<div class="zh-l plug">
+					<h4>
+			        <span class="nobor">
+			            <a href="#" class="jsz cur">公司新闻</a>/ 
+			            <a href="#" class="hyz">行业动态</a>
+			        </span>
+			        <em><a href="__APP__/PictureList_11.html" >+more</a></em>
+			    </h4>
+					<div class="newslist">
+						<div class="lfr tabCat">
+							<dl class="clearfix">
+								<dt>
+			            			<a href="__APP__/NewShow_{$gs_info.id}.html" >
+			                			<img src="__ROOT__/public/home/images/new1.jpg">
+			                		</a>
+			                	</dt>
+								<dd>
+			                		<b><a href="__APP__/NewShow_{$gs_info.id}.html">{$gs_info.title|msubstr=0,30}</a></b>
+			                		<span>{$gs_info.content|msubstr=0,75}</span>
+			                	</dd>
+							</dl>
+							<ul>
+								<volist name="gs_news" id="gs_news">
+			                        <li>
+			                        	<a href="__APP__/NewShow_{$gs_news.id}.html"><em>{$gs_news.dateandtime}</em>{$gs_news.title|msubstr=0,30}</a>
+			                		</li>
+		                        </volist>
+							</ul>
+						</div>
+						<div class="lfr tabCat" style="display: none;">
+							<dl>
+								<dt>
+		        					<a href="__APP__/NewShow_{$hy_info.id}.html">
+		        						<img src="__ROOT__/public/home/images/new1.jpg">
+		        					</a>
+		        				</dt>
+								<dd>
+		                			<b><a href="__APP__/NewShow_{$hy_info.id}.html">{$hy_info.title|msubstr=0,15}</a></b>
+		                			<span>{$hy_info.content|msubstr=0,75}</span>
+		                		</dd>
+							</dl>
+							<ul>
+								<volist name="hy_news" id="hy_news">
+		                        	<li><a href="__APP__/NewShow_{$gs_news.id}.html"><em>{$hy_news.dateandtime}</em>{$hy_news.title|msubstr=0,30}</a></li>
+		                        </volist>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="zh-r">
+					<h4>
+			        <span><a class="cj cur" href="__APP__/PictureList_12.html">最新动态</a> </span>
+			        <em><a href="#">+more</a></em>
+			    </h4>
+					<div class="sq">
+						<ul>
+							<volist name="js_news" id="js_news">
+					            <li>
+					            	<a href="__APP__/NewShow_{$js_news.id}.html" class="clearfix"><span>0{$i}</span>
+							            <p>
+							            	<em>{$js_news.title|msubstr=0,15}</em>
+							            	{$js_news.content|msubstr=0,35}
+							            </p>
+						            </a>
+					            </li>
+					        </volist>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--新闻 e -->
+
+		<!-- 友情链接 s -->
+		<div class="links ">
+			<div class="links_con clearfix">
+				<span>友情链接：</span>
+				<div class="link_a">
+					<volist name="friendlink" id="friendlink">
+	                	<a href="{$friendlink.linkurl}" target="_blank">{$friendlink.title}</a> |                   
+	                </volist>
+				</div>
+			</div>
+		</div>
+		<!-- 友情链接 e -->
+<!--footer-->
+<include file="Public/footer" />
+<!--footer end-->
+		<script type="text/javascript">
+			//置顶图标显示
+			$('#top-back').hide()
+			$(window).scroll(function() {
+				if($(this).scrollTop() > 350) {
+					$("#top-back").fadeIn();
+				} else {
+					$("#top-back").fadeOut();
+				}
+			})
+			//置顶事件
+			function topBack() {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 300);
+			}
+			//滚动
+			$(".mr_frbox").slide({
+				titCell: "",
+				mainCell: ".mr_frUl ul",
+				autoPage: true,
+				effect: "leftLoop",
+				autoPlay: true,
+				vis: 4
+			});
+
+			$(function() {
+				$("#marquee1").kxbdMarquee({
+					direction: "left"
+				});
+				$("#marquee2").kxbdMarquee({
+					isEqual: false
+				});
+			})();
+		</script>
+
+	</body>
+
+</html>

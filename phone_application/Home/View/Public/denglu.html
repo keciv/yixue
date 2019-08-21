@@ -1,0 +1,48 @@
+<if condition="$username eq null">
+
+	<div class="fl l">
+		<a href="__APP__"><img src="__ROOT__/public/phone/img/logo.png" /></a>
+	</div>
+	<div class="fl c" id="dlu">
+		<span>登录</span>
+		<ul class="clearfix">
+			<li><img src="__ROOT__/public/phone/img/qq1.png" /></li>
+			<li>
+				<a href="__APP__/Login/weibo"><img src="__ROOT__/public/phone/img/weibo.png" /></a>
+			</li>
+			<li><a href="__APP__/Login/weixin"><img src="__ROOT__/public/phone/img/weixin.png" /></a></li>
+		</ul>
+	</div>
+	<else/>
+
+	<div class="fl ll">
+		<a href="__APP__"><img src="__ROOT__/public/phone/img/logo.png" /></a>
+	</div>
+
+	<div class="fl posit">
+		<a href="">{$username} </a>&nbsp;&nbsp;
+		<a href="__APP__/Login/logout">退出</a>
+	</div>
+
+</if>
+<div class="fr r" id="lpk_nav">
+					<span class="glyphicon glyphicon-list"></span>
+				</div>
+	
+	
+	<!--<div class="fl l">
+	<a href="__APP__"><img src="__ROOT__/public/phone/img/logo.png" /></a>
+</div>
+
+<div class="fl c" id="dlu">
+<if condition="$username eq null">
+  <span>登录</span>
+  <ul class="clearfix">
+    <li><img src="__ROOT__/public/phone/img/qq1.png" /></li>
+    <li><a href="__APP__/Login/weibo"><img src="__ROOT__/public/phone/img/weibo.png" /></a></li>
+    <li><img src="__ROOT__/public/phone/img/weixin.png" /></li>
+  </ul>
+<else/>
+	欢迎<span>{$username}</span>登陆，<a href="__APP__/Login/logout">点击退出</a>
+</if>	
+</div>-->

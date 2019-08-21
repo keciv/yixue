@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>{$new.title}_{$title}</title>
+  <link rel="stylesheet" href="__ROOT__/public/phone/css/amazeui.min.css">
+  <link rel="stylesheet" href="__ROOT__/public/phone/css/app.css">
+</head>
+<body>
+<!--头部 s-->
+    <include file="Public/header" />
+<!--头部 e-->
+<!--Banner s-->
+  <include file="Public/Banner" />
+<!--Banner e-->
+
+<!-- 内容 -->
+<!-- 当前位置 s -->
+<include file="Public/Location" />
+<!--当前位置 e-->
+<!--列表标题-->
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+  <div class="am-list-news-hd am-cf">
+      <a href="#" class="">
+        <h2>
+          <img src="__ROOT__/public/phone/images/logo1.png">{$lanmuNow.title}
+        </h2>
+      </a>
+      <span class="am-list-news-more am-fr">JMNH ART CENTER</span>
+  </div>   
+</div>
+<!-- 内容 -->
+<div class="aboutjj">
+  <h5>{$new.title}</h5>  
+  <span class="fabsj">发表时间：{$new.dateandtime}</span>
+  <p>{$new.content}</p>
+
+  <!-- 分页 -->
+  <ul class="fy">
+    <li>上一篇：<a href="__APP__/New{$LastNext.lastType}_{$LastNext.last.newid}.html">{$LastNext.last.title}</a></li>
+    <li>
+      下一篇：
+      <a href="__APP__/New{$LastNext.nextType}_{$LastNext.next.newid}.html">{$LastNext.next.title}</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<!--footer-->
+<include file="Public/footer" />
+<!--footer end-->
+<!-- 图片后台处理 -->
+<script type="text/javascript">
+        $(function(){
+    $('.aboutjj').children('p').each(function(){
+    var d = $(this).children('img');
+    if(d.length>0)
+    {
+      $(this).css('text-indent',0);
+    }
+    })  
+  })
+</script>
+<!-- 底部机构信息点击出来下拉 -->
+<script type="text/javascript">
+ $(document).ready(function(){
+   $(".btn1").click(function(){
+   $(".jgxx").toggle();
+   });
+ });
+</script>
+<!-- 预约试听遮盖层 -->
+<script>
+    $(function(){
+        $(".close").click(function(){
+			$(".modal-backdrop").css('display','none');
+            $(".box").css('display','none');
+            $('body').css({'height':'100%','overflow':'auto'})
+        });
+     
+	  $(".flw").click(function(){
+         $(".box").css('display','block');
+		 $(".modal-backdrop").css('display','block');
+		 $('body').css({'height':'100%','overflow':'hidden'})
+       });
+     
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

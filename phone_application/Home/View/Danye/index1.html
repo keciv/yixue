@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>{$lanmuNow.title}_{$title}</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/lb/css/bootstrap.css" />
+	</head>
+
+	<body>
+
+    <!--头部 s-->
+   	<include file="Public/header" />
+	<!--头部 e-->
+		<div class="lpk">
+			<div class="lpk_head clearfix">
+				
+				<include file="Public/denglu" />
+				
+			</div>
+			<include file="Public/left_menu" />
+			<div class="filemain">
+				{$content.content}
+			</div>
+
+		</div>
+
+	</body>
+	<script src="__ROOT__/public/phone/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/public/phone/js/inde.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

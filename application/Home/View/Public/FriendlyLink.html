@@ -1,0 +1,15 @@
+﻿<div class="container-fluid wrap">
+    <div class="row">
+    	<div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 po_in mar_b">    		
+    		<h2 class="h2_title" > <span class="tle_img"></span>友情链接</h2>
+    		<div class="hr_l" ></div>
+    	</div>
+    	<div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 youqing">
+    		<ul>
+                <volist name="friendlink" id="friendlink">					
+				    <a href="{$friendlink.linkurl}"><li>{$friendlink.title}</li></a>
+				</volist>
+    		</ul>	  
+    	</div>
+    </div>
+</div>

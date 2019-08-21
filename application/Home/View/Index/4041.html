@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{$webInfo.title}</title>
+  	<!-- <meta name="Keywords" content="山西天波制泵股份有限公司">
+    <meta name="Description" content="山西天波制泵股份有限公司"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="__ROOT__/public/home/css/pintuer.css">
+    <script src="__ROOT__/public/home/js/jquery.js"></script>
+    <script src="__ROOT__/public/home/js/pintuer.js"></script>
+    <script src="__ROOT__/public/home/js/index.js"></script>
+    <script type="text/javascript" src="__ROOT__/public/home/js/jquery.SuperSlide2.js"></script>
+    <link rel="stylesheet" href="__ROOT__/public/home/css/css.css">
+    <link rel="stylesheet" href="__ROOT__/public/home/css/index.css">
+    <link rel="stylesheet" href="__ROOT__/public/home/css/style.css">
+    <script src="__ROOT__/public/home/js/respond.js"></script>
+</head>
+<body>
+<div class="head">
+        <div class="language">
+            <div class="container clearfix">
+                <span class="hy">欢迎来到山西洪波制泵股份有限公司官网</span>
+                <span class="tell">品质源于专业&nbsp;&nbsp;&nbsp;专业造就品牌</span>
+            </div>  
+        </div>
+
+        <div class="top">
+            <div class="logo">
+                <a href="__APP__">
+                    <img src="__ROOT__/public/home/images/logo.png"></a></div>
+            <div class="zi1">
+                <p>
+                    20多年专注于工程潜水电泵</p>
+                成就业内<span>潜水电泵</span>知名品牌</div>
+            <div class="tel clearfix">
+                <img src="__ROOT__/public/home/images/telltop.jpg">
+                <p><b>全国服务热线：</b><span>0354-5311613/5310213</span></p><br/>
+                <p></p>
+            </div>
+        </div>  
+    </div>
+    <!-- 导航 -->
+    <div class="navigation">
+        <div class="container" style="width:1300px;">
+            <ul class="nav nav-menu nav-inline nav-split nav-justified nav-navicon" id="nav-link5">     
+                <li class="active"><a href="__APP__">首页<span class="ywdh">HOME</span></a> </li>           
+                <li><a href="__APP__/Danye_2.html">走进天波<span class="ywdh">ABOUT US</span><!-- <span class="arrow"></span> --></a>
+                    <ul class="drop-menu">
+                        <volist name="tianbo" id="tianbo">
+                            <li><a href="__APP__/{$tianbo.controller}_{$tianbo.id}">{$tianbo.title}</a></li>
+                        </volist>
+                    </ul>
+                </li>
+                <li><a href="__APP__/NewList_7.html">新闻资讯<span class="ywdh">NEWS CENTER</span><!-- <span class="arrow"></span> --></a>
+                    <ul class="drop-menu">
+                        <volist name="xinwen" id="xinwen">
+                            <li><a href="__APP__/{$xinwen.controller}_{$xinwen.id}.html">{$xinwen.title}</a> </li>
+                        </volist>
+                    </ul>
+                </li>
+                <li class="nav-more" ><a href="__APP__/PictureList_11.html">产品中心<span class="ywdh">PRODUCTS</span><!-- <span class="arrow"></span> --></a>
+                    <ul class="drop-menu">
+                        <volist name="cp" id="cp">
+                            <li><a href="__APP__/{$cp.controller}_{$cp.id}.html">{$cp.title}</a> </li>
+                        </volist>
+                    </ul>
+                </li>
+                <li><a href="__APP__/PictureList_19.html">市场拓展<span class="ywdh">MARKET</span></a> </li>
+                <li><a href="__APP__/PictureList_20.html">抢险救灾<span class="ywdh">RESCUE RELIEF</span></a> </li>
+                <li><a href="__APP__/Danye_21.html">营销网络<span class="ywdh">SALES</span></a> </li>
+                <li><a href="__APP__/Danye_22.html">联系我们<span class="ywdh">CONTACT US</span></a> </li>
+            </ul>
+        </div>
+    </div>
+    <!-- banner -->
+    <!-- <div class="banner pc-banner">
+		<div class="carousel">
+			<div class="item"><img src="__ROOT__/public/home/images/banner1-1.jpg"></div>
+			<div class="item"><img src="__ROOT__/public/home/images/banner-1.jpg"></div>
+			<div class="item"><img src="__ROOT__/public/home/images/banner2.jpg"></div>
+			<div class="item"><img src="__ROOT__/public/home/images/banner3.jpg"></div>
+		</div>
+	</div> -->
+	<div class="nyxq" style="  border-top: 1px solid #e7e7e7;">
+		<div class="container">
+			<div class="div_404">
+  				<img src="__ROOT__/public/home/images/404.png">
+ 				<a href="__APP__" class="back_btn" >返回首页</a>
+			</div>
+		</div>
+	</div>
+	
+<!--footer-->
+<include file="Public/footer" />
+<!--footer end-->
+</body>
+</html>

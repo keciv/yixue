@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/lb/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/home/css/index.css" />
+	</head>
+
+	<body style="background: #f5f5f5;">
+		<div class="head clearfix">
+			<div class="fl left">
+				<a class="glyphicon glyphicon-chevron-left" href="tk.html"></a>
+			</div>
+			<div class="fl center">
+				选择您的专业
+			</div>
+		</div>
+		<div type="text/css" style="height: 5rem;"></div>
+		<div class="classification clearfix">
+			<div class="fl left">
+				<ul>
+					<li class="leftbg">护士</li>
+					<li>药师</li>
+					<li>医师</li>
+					<li>医辽事业编</li>
+					<li>卫生职称</li>
+					<li>住院医师</li>
+					<li>医学考研</li>
+				</ul>
+			</div>
+			<div class="fr right" id="height">
+				<div class="right_main" style="display: block;">
+					<h3>护士</h3>
+					<div class="right_main_main">
+						<p class="p_bgcolor">护士资格</p>
+					</div>
+				</div>
+				<div class="right_main" >
+					<h3>药师</h3>
+					<div class="right_main_main">
+						<p>执业西药师</p>
+						<p>执业中药师</p>
+						<p>营养课程</p>
+						<p>药店管理</p>
+					</div>
+				</div>
+				<div class="right_main" >
+					<h3>医师</h3>
+					<div class="right_main_main">
+						<p>临床执业医师</p>
+						<p>乡村全科助理医师</p>
+						<p>口腔助理医师</p>
+						<p>中西医助理医师</p>
+						<p>中医助理医师</p>
+						<p>临床助理医师</p>
+						<p>口腔执业医师</p>
+						<p>中西医执业医师</p>
+						<p>中医执业医师</p>
+						<p>中医专长</p>
+					</div>
+				</div>
+				<div class="right_main" >
+					<h3>医辽事业编</h3>
+					<div class="right_main_main">
+						<p>解剖学</p>
+						<p>药理学</p>
+						<p>生理学</p>
+						<p>病理学</p>
+					</div>
+				</div>
+				<div class="right_main" >
+					<h3>卫生职称</h3>
+					<div class="right_main_main">
+						<p>102初级中荮士</p>
+						<p>367主管中药师</p>
+						<p>361-362疾病控制主治医师</p>
+						<p>201初级药师</p>
+						<p>366主管药师</p>
+						<p>303-39内科学(中级)</p>
+					</div>
+				</div>
+				<div class="right_main" >
+					<h3>住院医师</h3>
+					<div class="right_main_main">
+						<p>耳鼻咽喉科</p>
+						<p>全科</p>
+						<p>神经内科</p>
+						<p>外科</p>
+						<p>小儿内科</p>
+						<p>小儿外科</p>
+						<p>眼科</p>
+						<p>皮肤科</p>
+						<p>内科</p>
+					</div>
+				</div>
+				<div class="right_main" >
+					<h3>医学考研</h3>
+					<div class="right_main_main">
+						<p>西医考研</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var lpk=window.screen.height;
+		$('#height').height(lpk-50);
+		$('.classification .left>ul li').click(function(){
+			$(this).addClass('leftbg').siblings().removeClass('leftbg')
+			$('#height>div').eq($(this).index()).show().siblings().hide()
+		})
+		$('#height p').click(function(){
+			$(this).addClass('p_bgcolor').parent().parent().siblings().children().children('p').removeClass('p_bgcolor');
+		    $(this).addClass('p_bgcolor').siblings().removeClass('p_bgcolor');
+		   var p_text=$(this).text();  //当前点击的内容
+		})
+	</script>
+
+</html>

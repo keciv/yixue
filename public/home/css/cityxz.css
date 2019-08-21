@@ -1,0 +1,279 @@
+@charset "utf-8";
+/* CSS Document */
+.bgColor5DB2F7{
+	background-color:#4495ed!important;
+	color:#fff!important;
+}
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-left: 9px solid #5DB2F7;
+	border-bottom: 5px solid transparent;
+	position: absolute;
+	top: calc(40%);
+	left: 0;
+}
+
+.triangle-right_ {
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-left: 9px solid #5DB2F7;
+	border-bottom: 5px solid transparent;
+	position: absolute;
+	top: calc(50%);
+	left: 0;
+}
+
+.bgColorf5f5f5 {
+	background-color: #f5f5f5;
+}
+
+ul {
+	padding: 0;
+	margin: 0
+}
+
+ul li {
+	list-style: none;
+}
+
+.areaHeader {
+	width: 1180px;
+	margin: 13px auto 0;
+}
+
+.cityTitleSection {
+	width: 1180px;
+	margin: 10px auto 0;
+}
+
+.banner {
+	margin-top: 2px;
+}
+
+.banner img {
+	width: 100%;
+	height: 218px;
+}
+
+.cityTitle {
+	height: 20px;
+}
+
+.cityTitleSection ul li {
+	margin-right: 26px;
+	color: #6A6A6A;
+	font-size: 14px;
+	float: left;
+	display: inline-block;
+	cursor:pointer;
+}
+
+.cityTitleSection ul li:first-child {
+	color: #4495ed;
+}
+
+.citySelectBox {
+	margin-top: 24px;
+	margin-bottom: 22px;
+}
+
+.citySelectBox div {
+	float: left;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.citySelectBox div:first-child {
+	color: #555555
+}
+
+.citySelectBox div select {
+	height: 30px;
+	border-color: #DEDEDE;
+	width: 118px;
+	color: #DEDEDE
+}
+
+.citySelectBox div:nth-child(2) {
+	margin-left: 27px;
+}
+
+.citySelectBox div:nth-child(3),
+.citySelectBox div:nth-child(4) {
+	margin-left: 10px;
+}
+
+.citySelectBox div:nth-child(5) {
+	margin-left: 30px;
+	color: #555555;
+	margin-right: 25px;
+}
+
+.citySelectBox div:nth-child(6) input {
+	width: 114px;
+	height: 26px;
+	border: none;
+	border: 1px solid #dedede
+}
+
+.citySelectBox div:nth-child(7) {
+	width: 54px;
+	height: 28px;
+	margin-top: 1px;
+	background-color: #F5F5F5;
+	color: #555555;
+	text-align: center;
+	border: 1px solid #DEDEDE;
+	border-left: none;
+	cursor: pointer;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+	/*IE/7/6*/
+}
+
+.select {
+	color: #555;
+	padding: 21px 0 15px;
+	font-size: 16px;
+	color: #555;
+	border-top: 1px solid #f5f5f5
+}
+
+body {
+	background-color: #fff;
+}
+
+.flt {
+	float: left;
+}
+
+.frt {
+	float: right;
+}
+
+.selectBox {
+	width: 1180px;
+	border: 1px solid #F0F0F0;
+	min-height: 500px;
+}
+
+.selectBoxCont>div:first-child {
+	background-color: #f5f5f5;
+	color: #999999;
+	font-size: 20px;
+	text-align: center;
+	width: 42px;
+	height: 64px;
+	line-height: 64px;
+}
+
+.selectBoxCont div:nth-child(2) div:nth-child(1) div:nth-child(1) {
+	border-right: 1px solid #f0f0f0;
+	height: 64px;
+	width: 69px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 64px;
+	cursor: pointer;
+	position: relative;
+}
+
+.selectBoxCont div:nth-child(2) div:nth-child(2) div:nth-child(1) {
+	border-right: 1px solid #f0f0f0;
+	height: 64px;
+	width: 69px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 64px;
+	cursor: pointer;
+	position: relative;
+}
+
+.selectBoxCont div:nth-child(2) div:nth-child(3) div:nth-child(1) {
+	border-right: 1px solid #f0f0f0;
+	height: 64px;
+	width: 69px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 64px;
+	cursor: pointer;
+	position: relative;
+}
+
+.selectBoxCont div:nth-child(2) div:nth-child(4) div:nth-child(1) {
+	border-right: 1px solid #f0f0f0;
+	height: 64px;
+	width: 69px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 64px;
+	cursor: pointer;
+	position: relative;
+}
+
+.selectBoxCont div:nth-child(2) div:nth-child(5) div:nth-child(1) {
+	border-right: 1px solid #f0f0f0;
+	height: 64px;
+	width: 69px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 64px;
+	cursor: pointer;
+	position: relative;
+}
+
+.selectBoxCont div:nth-child(2) div:nth-child(6) div:nth-child(1) {
+	border-right: 1px solid #f0f0f0;
+	height: 64px;
+	width: 69px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 64px;
+	cursor: pointer;
+	position: relative;
+}
+
+.selectBoxCont div ul li {
+	float: left;
+	display: block;
+	margin-right: 22px;
+	font-size: 12px;
+	color: #333;
+	margin-top: 13px;
+	cursor: pointer;
+}
+
+.selectBoxCont div ul li:first-child {
+	color: #333;
+}
+
+
+.csxz{ width: 100%; margin: 20px 0;}
+.csxz .tit{float: left; height: 40px; line-height: 40px; width: 100px;    font-size: 16px;color: #555;}
+
+.sheng{
+    border-right: 1px solid #f0f0f0;
+    height: 64px;
+    width: 69px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 64px;
+    cursor: pointer;
+    position: relative;
+}

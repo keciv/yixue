@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title>{$new.title}_{$title}</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/reset.css" />
+		<!--<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/common.css" />-->
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/lb/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/public/phone/css/comment.css" />
+	</head>
+
+	<body>
+    <!--头部 s-->
+   	<include file="Public/header" />
+	<!--头部 e-->
+		<div class="lpk">
+			<div class="lpk_head clearfix">
+				<include file="Public/denglu" />
+			</div>
+			<div class="biaoti">
+				<h3>{$new.title}</h3>
+				<p>{$new.dateandtime}</p>
+				<p>{$new.source}</p>
+				<hr />
+			</div>
+
+			<div class="jianjie">
+				{$new.content}
+			</div>
+
+			<div class="anniu" id="abc">
+				<a class="glyphicon glyphicon-edit"></a>
+				<a class="glyphicon glyphicon-share"></a>
+				<div class="bdsharebuttonbox">
+					<a href="#" class="bds_more" data-cmd="more"></a>
+					<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+					<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+					<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+					<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+					<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+				</div>
+
+				<!-- <include file="Public/left_menu" /> -->
+
+			</div>
+			<div class="comment">
+				<h4>写评论</h4>
+				<div class="container">
+					<div class="commentbox">
+						<textarea cols="80" rows="50" placeholder="来说几句吧......" class="mytextarea" id="content"></textarea><input type="hidden" name="ping" id="ping" value="{$new.controller}">
+						<div class="btn btn-info pull-right" id="comment" onclick="pinlun({$new.id});" style="margin-top: 10px;">评论</div>
+					</div>
+					<div class="comment-list prolist">
+
+					</div>
+				</div>
+			</div>
+			<p class="link_p">上一条:
+				<a href="__APP__/New{$LastNext.lastType}_{$LastNext.last.id}.html">{$LastNext.last.title|msubstr=0,15}</a>
+			</p>
+			<p class="link_p">下一条:
+				<a href="__APP__/New{$LastNext.nextType}_{$LastNext.next.id}.html">{$LastNext.next.title|msubstr=0,15}</a>
+			</p>
+
+		</div>
+
+	</body>
+	<script src="__ROOT__/public/phone/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/public/phone/js/jquery.comment.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/public/phone/js/inde.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__ROOT__/public/js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+      var page=1;  
+      var finished=0;  
+      var sover=0;  
+      <!----------------产品加载更多-------------------------->  
+      //如果屏幕未到整屏自动加载下一页补满  
+      var setdefult=setInterval(function (){  
+          if(sover==1)  
+              clearInterval(setdefult);     
+          else if($(".prolist").height()<$(window).height()/2)  
+              loadmore($(window));  
+          else  
+              clearInterval(setdefult);  
+      },50);  
+      //加载完  
+      function loadover(){  
+          if(sover==1)  
+          {     
+              var overtext="Duang～到底了";  
+              $(".loadmore").remove();  
+              if($(".loadover").length>0)  
+              {  
+                  $(".loadover span").eq(0).html(overtext);  
+              }  
+              else  
+              {  
+                  var txt='<div class="loadover"><span>'+overtext+'</span></div>'  
+                  $("#wrapper").append(txt);  
+              }  
+          }  
+      }  
+      //加载更多  
+      var vid=0;  
+      var paginalNum =5;
+      var ID="{$new.id}";
+      var controller="NewList";
+
+      // alert(ID);
+      function loadmore(obj){
+          if(finished==0 && sover==0)  
+          {  
+              var scrollTop = $(obj).scrollTop();  
+              var scrollHeight = $(document).height();  
+              var windowHeight = $(obj).height();  
+              if($(".loadmore").length==0)  
+              {  
+                  var txt='<div class="loadmore"><span class="loading"></span>加载中..</div>'  
+                  $("#wrapper").append(txt);  
+              }  
+              if (scrollTop + windowHeight -scrollHeight<=50 ) {  
+                  //此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作  
+                  //防止未加载完再次执行  
+                  finished=1;  
+                  var result = "";  
+                  
+                  $.ajax({
+                    url:'__APP__/GetData/pinlun',
+                    data:{id:ID,page:page,paginalNum:paginalNum,controller:controller},
+                    type:'post',
+                    dataType:'json',
+                    success:function(data){
+                    	console.log(data);
+
+                     if(data.length>0){
+                        //防止未加载完再次执行  
+                        for(var i = 0; i < data.length; i++){  
+                            vid++;  
+
+                   result+= 
+                   '<div class="comment-info"><header><img src="__ROOT__/'+ data[i].touxiang +'" data-bd-imgshare-binded="1"></header><div class="comment-right"><h3>'+ data[i].denglu_type +'</h3><div class="comment-content-header"><span><i class="glyphicon glyphicon-time"></i>'+ data[i].dateandtime +'</span></div><p class="content">'+ data[i].content +'</p><div class="comment-content-footer"><div class="row"><div class="col-md-10"></div><div class="col-md-2"><span class="reply-btn"></span></div></div></div><div class="reply-list"></div></div></div>'	
+
+                        }
+                          $('.prolist').append(result);
+                            page+=1; 
+                            finished=0; 
+                     }else{
+                        sover=1;  
+                        loadover();
+                     }
+                   }
+                })  
+              }  
+          }  
+      }  
+      //页面滚动执行事件  
+      $(window).scroll(function (){  
+          loadmore($(this));  
+      });  
+    </script>
+	
+<script type="text/javascript">
+		
+		function pinlun(wenzhangID,controller){
+			var content = $("#content").val();
+			var controller = $("#ping").val();
+				$.ajax({
+			        //后台获取数据的路径
+			        url: '__APP__/NewShow/jiaoliu',
+			        //参数
+			        data: { content: content,wenzhangID: wenzhangID,controller: controller },
+			        //传输方式
+			        type: 'post',
+			        //获取到的数据类型
+			        dataType:'json',
+			        //成功获取到数据后
+			        success: function (data) {
+			        	// console.log(data);
+			        	$(".comment-list").prepend('<div class="comment-info"><header><img src="__ROOT__/'+ data.touxiang +'" data-bd-imgshare-binded="1"></header><div class="comment-right"><h3>'+ data.denglu_type +'</h3><div class="comment-content-header"><span><i class="glyphicon glyphicon-time"></i>'+ data.dateandtime +'</span></div><p class="content">'+ data.content +'</p><div class="comment-content-footer"><div class="row"><div class="col-md-10"></div><div class="col-md-2"><span class="reply-btn"></span></div></div></div><div class="reply-list"></div></div></div>');
+			        	layer.msg("评论发表成功！");
+			        }
+			    })    
+		}
+	</script>
+
+
+</html>
